@@ -1,8 +1,6 @@
 var gulp = require('gulp');
 var spsave = require('spsave').spsave;
-var log = require('gulp-util').log;
 var creds = require('./creds.js');
-var sass = require('gulp-sass');
 var coreOptions = require('./coreOptions.js');
 
 var paths = {
@@ -38,12 +36,6 @@ var copyToSharePoint = function (fileOptions) {
 };
 
 gulp.task("default", ["watch"]);
-
-gulp.task("sass", function() {
-	return gulp.src('./src/**/*.scss')
-	.pipe(sass.sync().on('error', sass.logError))
-	.pipe(gulp.dest('./src'))
-});
 
 gulp.task("deploy", ["masterpages", "pagelayouts", "displaytemplates", "assets"]);
 
