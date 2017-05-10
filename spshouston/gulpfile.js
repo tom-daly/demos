@@ -7,7 +7,8 @@ var paths = {
 	masterPages: ["./src/MasterPages/**/*.master"],
 	styleLibrary: ["./src/StyleLibrary/**/*"],
 	pageLayouts: ["./src/PageLayouts/**/*.aspx"],
-	displayTemplates: ["./src/DisplayTemplates/**/*"]
+	displayTemplates: ["./src/DisplayTemplates/**/*"],
+	publishingImages: ["./PublishingImages/**/*"]
 }
 
 var fileOptions = {
@@ -28,6 +29,11 @@ var fileOptions = {
 		folder: "_catalogs/masterpage/Display Templates", //folder inside SharePoint
 		glob: paths.displayTemplates, //local folder
 		base: "DisplayTemplates"
+	},
+	publishingImages: {
+		folder: "PublishingImages", //folder inside SharePoint
+		glob: paths.publishingImages, //local folder
+		base: "PublishingImages" //this remove the 'PublishingImages' from the url	
 	}
 }
 
@@ -37,14 +43,18 @@ var copyToSharePoint = function (fileOptions) {
 
 gulp.task("default", ["watch"]);
 
-gulp.task("deploy", ["masterpages", "pagelayouts", "displaytemplates", "assets"]);
+gulp.task("deploy", ["masterpages", "pagelayouts", "displaytemplates", "stylelibrary", "publishingimages"]);
 
 gulp.task("displaytemplates", function() {
 	return copyToSharePoint(fileOptions.displayTemplates);
 });
 
-gulp.task("assets", function () {
+gulp.task("stylelibrary", function () {
 	return copyToSharePoint(fileOptions.styleLibrary);
+});
+
+gulp.task("publishingimages", function () {
+	return copyToSharePoint(fileOptions.publishingImages);
 });
 
 gulp.task("pagelayouts", function () {
@@ -63,6 +73,12 @@ gulp.task("watch", function () {
 		copyToSharePoint(changedFileOptions);
 	});
 
+	gulp.watch(paths.publishingImages).on("change", function (file) {
+		var changedFileOptions = fileOptions.publishingImages;
+		changedFileOptions.glob = file.path;
+		copyToSharePoint(changedFileOptions);
+	});	
+	
 	gulp.watch(paths.masterPages).on("change", function (file) {
 		var changedFileOptions = fileOptions.masterPages;
 		changedFileOptions.glob = file.path;
