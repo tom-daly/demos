@@ -8,7 +8,7 @@ var paths = {
 	styleLibrary: ["./src/StyleLibrary/**/*"],
 	pageLayouts: ["./src/PageLayouts/**/*.aspx"],
 	displayTemplates: ["./src/DisplayTemplates/**/*"],
-	publishingImages: ["./PublishingImages/**/*"]
+	publishingImages: ["./src/PublishingImages/**/*"]
 }
 
 var fileOptions = {
