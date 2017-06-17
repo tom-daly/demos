@@ -1,0 +1,15 @@
+{
+  "name": "spsbmore",
+  "version": "1.0.0",
+  "description": "",
+  "main": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "spsave": "^3.0.2"
+  }
+}

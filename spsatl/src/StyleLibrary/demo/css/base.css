@@ -1,0 +1,11 @@
+.app {
+    margin: 10px;
+    width: 300px;
+    display: inline-block;
+}
+
+.ms-Button .ms-Icon {
+    position: relative;
+    top: 2px;
+    right: 2px;
+}
