@@ -1,0 +1,369 @@
+<?xml version="1.0"?>
+<pnp:Provisioning xmlns:pnp="http://schemas.dev.office.com/PnP/2016/05/ProvisioningSchema">
+  <pnp:Preferences Generator="OfficeDevPnP.Core, Version=2.17.1708.1, Culture=neutral, PublicKeyToken=3751622786b357c2" />
+  <pnp:Templates ID="CONTAINER-TEMPLATE-7FFCE2E80E0B47EBB8BE29831D609E84">
+    <pnp:ProvisioningTemplate ID="TEMPLATE-7FFCE2E80E0B47EBB8BE29831D609E84" Version="1" BaseSiteTemplate="GROUP#0">
+      <pnp:WebSettings RequestAccessEmail="someone@example.com" NoCrawl="false" WelcomePage="SitePages/Home.aspx" SiteLogo="" AlternateCSS="" MasterPageUrl="{masterpagecatalog}/seattle.master" CustomMasterPageUrl="{masterpagecatalog}/seattle.master" />
+      <pnp:RegionalSettings AdjustHijriDays="0" AlternateCalendarType="None" CalendarType="Gregorian" Collation="25" FirstDayOfWeek="Sunday" FirstWeekOfYear="0" LocaleId="1033" ShowWeeks="false" Time24="false" TimeZone="13" WorkDayEndHour="5:00PM" WorkDays="62" WorkDayStartHour="8:00AM" />
+      <pnp:SupportedUILanguages>
+        <pnp:SupportedUILanguage LCID="1033" />
+        <pnp:SupportedUILanguage LCID="1031" />
+        <pnp:SupportedUILanguage LCID="1036" />
+        <pnp:SupportedUILanguage LCID="2108" />
+        <pnp:SupportedUILanguage LCID="1057" />
+        <pnp:SupportedUILanguage LCID="1044" />
+        <pnp:SupportedUILanguage LCID="1049" />
+        <pnp:SupportedUILanguage LCID="2052" />
+        <pnp:SupportedUILanguage LCID="1028" />
+        <pnp:SupportedUILanguage LCID="1081" />
+        <pnp:SupportedUILanguage LCID="1086" />
+        <pnp:SupportedUILanguage LCID="1060" />
+        <pnp:SupportedUILanguage LCID="1030" />
+        <pnp:SupportedUILanguage LCID="1069" />
+        <pnp:SupportedUILanguage LCID="1035" />
+        <pnp:SupportedUILanguage LCID="1043" />
+        <pnp:SupportedUILanguage LCID="1051" />
+        <pnp:SupportedUILanguage LCID="1068" />
+        <pnp:SupportedUILanguage LCID="1026" />
+        <pnp:SupportedUILanguage LCID="1110" />
+        <pnp:SupportedUILanguage LCID="1055" />
+        <pnp:SupportedUILanguage LCID="1106" />
+        <pnp:SupportedUILanguage LCID="1050" />
+        <pnp:SupportedUILanguage LCID="1038" />
+        <pnp:SupportedUILanguage LCID="1042" />
+        <pnp:SupportedUILanguage LCID="1063" />
+        <pnp:SupportedUILanguage LCID="1071" />
+        <pnp:SupportedUILanguage LCID="1025" />
+        <pnp:SupportedUILanguage LCID="1041" />
+        <pnp:SupportedUILanguage LCID="1062" />
+        <pnp:SupportedUILanguage LCID="1164" />
+        <pnp:SupportedUILanguage LCID="1046" />
+        <pnp:SupportedUILanguage LCID="2070" />
+        <pnp:SupportedUILanguage LCID="9242" />
+        <pnp:SupportedUILanguage LCID="1054" />
+        <pnp:SupportedUILanguage LCID="5146" />
+        <pnp:SupportedUILanguage LCID="1029" />
+        <pnp:SupportedUILanguage LCID="3082" />
+        <pnp:SupportedUILanguage LCID="1037" />
+        <pnp:SupportedUILanguage LCID="1045" />
+        <pnp:SupportedUILanguage LCID="10266" />
+        <pnp:SupportedUILanguage LCID="2074" />
+        <pnp:SupportedUILanguage LCID="1058" />
+        <pnp:SupportedUILanguage LCID="1032" />
+        <pnp:SupportedUILanguage LCID="1061" />
+        <pnp:SupportedUILanguage LCID="1040" />
+        <pnp:SupportedUILanguage LCID="1087" />
+        <pnp:SupportedUILanguage LCID="1053" />
+        <pnp:SupportedUILanguage LCID="1066" />
+        <pnp:SupportedUILanguage LCID="1027" />
+        <pnp:SupportedUILanguage LCID="1048" />
+      </pnp:SupportedUILanguages>
+      <pnp:AuditSettings AuditLogTrimmingRetention="90" TrimAuditLog="true">
+        <pnp:Audit AuditFlag="None" />
+      </pnp:AuditSettings>
+      <pnp:PropertyBagEntries>
+        <pnp:PropertyBagEntry Key="ProvCorrelationId" Value="859b249e-a09c-4000-7b81-4d123ca0e40f" Overwrite="false" />
+        <pnp:PropertyBagEntry Key="LastGroupSitePrivacyUpdated" Value="636440622243036345" Overwrite="false" />
+        <pnp:PropertyBagEntry Key="HomepageProvisioned" Value="1" Overwrite="false" />
+      </pnp:PropertyBagEntries>
+      <pnp:Security>
+        <pnp:AdditionalAdministrators>
+          <pnp:User Name="c:0o.c|federateddirectoryclaimprovider|4e8d59f9-9d8e-4728-a524-2c058f1beff7_o" />
+        </pnp:AdditionalAdministrators>
+        <pnp:AdditionalOwners>
+          <pnp:User Name="c:0o.c|federateddirectoryclaimprovider|4e8d59f9-9d8e-4728-a524-2c058f1beff7_o" />
+        </pnp:AdditionalOwners>
+        <pnp:AdditionalMembers>
+          <pnp:User Name="c:0o.c|federateddirectoryclaimprovider|4e8d59f9-9d8e-4728-a524-2c058f1beff7" />
+        </pnp:AdditionalMembers>
+        <pnp:Permissions />
+      </pnp:Security>
+      <pnp:Navigation>
+        <pnp:GlobalNavigation NavigationType="Structural">
+          <pnp:StructuralNavigation RemoveExistingNodes="false" />
+        </pnp:GlobalNavigation>
+        <pnp:CurrentNavigation NavigationType="StructuralLocal">
+          <pnp:StructuralNavigation RemoveExistingNodes="false">
+            <pnp:NavigationNode Title="Home" Url="{site}" />
+            <pnp:NavigationNode Title="Conversations" Url="{site}/_layouts/15/groupstatus.aspx?Target=CONVERSATIONS&amp;Source=QuickLaunch" IsExternal="true" />
+            <pnp:NavigationNode Title="Documents" Url="{site}/Shared Documents/Forms/AllItems.aspx" />
+            <pnp:NavigationNode Title="Notebook" Url="{site}/_layouts/15/groupstatus.aspx?Target=NOTEBOOK" IsExternal="true" />
+            <pnp:NavigationNode Title="Pages" Url="{site}/SitePages/Forms/ByAuthor.aspx" />
+            <pnp:NavigationNode Title="Site contents" Url="{site}/_layouts/15/viewlsts.aspx" IsExternal="true" />
+          </pnp:StructuralNavigation>
+        </pnp:CurrentNavigation>
+      </pnp:Navigation>
+      <pnp:SiteFields>
+        <Field ID="{b1996002-9167-45e5-a4df-b2c41c6723c7}" Name="RatingCount" StaticName="RatingCount" DisplayName="Number of Ratings" Description="Number of ratings submitted" Group="Content Feedback" Type="RatingCount" Min="0" Decimals="0" ShowInEditForm="FALSE" ShowInDisplayForm="FALSE" ShowInNewForm="FALSE" CanToggleHidden="TRUE" SourceID="http://schemas.microsoft.com/sharepoint/v3" />
+        <Field ID="{5FEB760D-E1C5-42D7-92AC-26AE20A1365A}" Name="DescendantRatingsCount" SourceID="http://schemas.microsoft.com/sharepoint/v3" DisplaceOnUpgrade="TRUE" Group="_Hidden" Type="Integer" DisplayName="Aggregated Rating Count" ReadOnly="TRUE" Hidden="FALSE" AllowDeletion="FALSE" Sealed="TRUE" />
+        <Field ID="{6E4D832B-F610-41a8-B3E0-239608EFDA41}" Name="LikesCount" StaticName="LikesCount" DisplayName="Number of Likes" Group="Content Feedback" Type="Likes" ShowInEditForm="FALSE" ShowInDisplayForm="FALSE" ShowInNewForm="FALSE" CanToggleHidden="TRUE" JSLink="sp.ui.reputation.js" SourceID="http://schemas.microsoft.com/sharepoint/v3">
+          <FieldRefs>
+            <FieldRef Name="LikedBy" />
+          </FieldRefs>
+        </Field>
+        <Field ID="{F4EBD738-21DB-4797-9229-2E817DD2367D}" Name="TagEventDate" SourceID="http://schemas.microsoft.com/sharepoint/v3" Required="FALSE" ShowInFileDlg="FALSE" ShowInNewForm="FALSE" ShowInEditForm="FALSE" ReadOnly="TRUE" StaticName="TagEventDate" Type="DateTime" DisplayName="Label Event Date" Sortable="TRUE" />
+        <Field ID="{EA588E51-855C-4533-9F5A-F21D7E19564E}" Type="URL" Group="_Hidden" Name="BannerUrl" DisplayName="Banner URL" Sealed="TRUE" SourceID="http://schemas.microsoft.com/sharepoint/v3/fields" StaticName="BannerUrl" />
+        <Field ID="{5D45DB58-9AE3-4541-9BD0-759872D0D8D6}" Name="TopicLastRatedOrLikedBy" SourceID="http://schemas.microsoft.com/sharepoint/v3" DisplaceOnUpgrade="TRUE" Group="_Hidden" Type="User" List="UserInfo" Sortable="FALSE" DisplayName="Topic Last Updated By" Hidden="TRUE" AllowDeletion="FALSE" Sealed="TRUE" />
+        <Field ID="{4D64B067-08C3-43DC-A87B-8B8E01673313}" Name="RatedBy" StaticName="RatedBy" DisplayName="Rated By" Description="Users rated the item." Group="_Hidden" Type="UserMulti" List="UserInfo" Mult="TRUE" Hidden="TRUE" ForcePromoteDemote="TRUE" SourceID="http://schemas.microsoft.com/sharepoint/v3" />
+        <Field ID="{3A6B296C-3F50-445C-A13F-9C679EA9DDA3}" Name="ComplianceAssetId" SourceID="http://schemas.microsoft.com/sharepoint/v3" Required="FALSE" ShowInFileDlg="FALSE" ShowInNewForm="FALSE" ShowInEditForm="FALSE" ReadOnly="TRUE" StaticName="ComplianceAssetId" Type="Text" DisplayName="Compliance Asset Id" Sortable="TRUE" />
+        <Field ID="{DB8D9D6D-DC9A-4FBD-85F3-4A753BFDC58C}" Name="_LikeCount" SourceID="http://schemas.microsoft.com/sharepoint/v3" StaticName="_LikeCount" ReadOnly="TRUE" Type="Lookup" List="Docs" ShowField="LikeCount" DisplayName="Like count" FromBaseType="TRUE" DisplaceOnUpgrade="TRUE" FieldRef="ID" JoinColName="DoclibRowId" JoinRowOrdinal="0" JoinType="INNER" />
+        <Field ID="{4E148F74-0C77-4D35-B8F9-F1067081FB37}" Name="_ThemePreviewJson" StaticName="_ThemePreviewJson" DisplaceOnUpgrade="TRUE" DisplayName="Theme Preview JSON" Type="Note" RichText="FALSE" Group="_Hidden" Hidden="TRUE" SourceID="http://schemas.microsoft.com/sharepoint/v3" AllowDeletion="FALSE" DelayActivateTemplateBinding="SPSPERS,GROUP" />
+        <Field ID="{16582F9F-BA8C-42F7-8A63-9994650BB6C8}" Name="DescendantLikesCount" SourceID="http://schemas.microsoft.com/sharepoint/v3" DisplaceOnUpgrade="TRUE" Group="_Hidden" Type="Integer" DisplayName="Aggregated Like Count" ReadOnly="TRUE" Hidden="FALSE" AllowDeletion="FALSE" Sealed="TRUE" />
+        <Field ID="{9dc5bba2-9c3e-4f46-a845-e25330b5eaf6}" Name="OtherMail" SourceID="http://schemas.microsoft.com/sharepoint/v3" StaticName="OtherMail" Group="_Hidden" DisplayName="OtherMail" ReadOnly="FALSE" Type="Text" FromBaseType="TRUE" DelayActivateTemplateBinding="GROUP,SPSPERS,SITEPAGEPUBLISHING" />
+        <Field ID="{5a14d1ab-1513-48c7-97b3-657a5ba6c742}" Name="AverageRating" StaticName="AverageRating" DisplayName="Rating (0-5)" Description="Average value of all the ratings that have been submitted" Group="Content Feedback" Type="AverageRating" Decimals="2" Min="0" Max="5" ShowInEditForm="FALSE" ShowInDisplayForm="FALSE" ShowInNewForm="FALSE" CanToggleHidden="TRUE" JSLink="sp.ui.reputation.js" SourceID="http://schemas.microsoft.com/sharepoint/v3">
+          <FieldRefs>
+            <FieldRef Name="RatingCount" />
+            <FieldRef Name="RatedBy" />
+            <FieldRef Name="Ratings" />
+          </FieldRefs>
+        </Field>
+        <Field ID="{EA7208D9-8D79-4553-9572-6E83377F523A}" Type="Geolocation" Group="_Hidden" Name="Geolocation" DisplayName="Geolocation" Sealed="TRUE" SourceID="http://schemas.microsoft.com/sharepoint/v3/fields" StaticName="Geolocation" />
+        <Field ID="{261075DB-0525-4FB8-A6EA-772014186599}" Name="LayoutWebpartsContent" StaticName="LayoutWebpartsContent" DisplayName="Page Layout Content" Type="HTML" SourceID="http://schemas.microsoft.com/sharepoint/v3" Group="_Hidden" Description="This column stores the content of webparts in page layout in a site page." ShowInNewForm="FALSE" ShowInEditForm="FALSE" ShowInDisplayForm="FALSE" ShowInViewForms="FALSE" ShowInListSettings="FALSE" ShowInVersionHistory="FALSE" RichText="TRUE" RichTextMode="FullHtml" />
+        <Field ID="{2CDCD5EB-846D-4f4d-9AAF-73E8E73C7312}" Name="LikedBy" StaticName="LikedBy" DisplayName="Liked By" Group="_Hidden" Type="UserMulti" List="UserInfo" Mult="TRUE" Hidden="TRUE" SourceID="http://schemas.microsoft.com/sharepoint/v3" />
+        <Field ID="{898232F1-83C0-41DF-9F1A-64B08A03F62D}" Name="Popularity" SourceID="http://schemas.microsoft.com/sharepoint/v3" DisplaceOnUpgrade="TRUE" Group="_Hidden" Type="Number" DisplayName="Popularity" ReadOnly="TRUE" Hidden="FALSE" Indexed="TRUE" AllowDeletion="FALSE" Sealed="TRUE" />
+        <Field ID="{D307DFF3-340F-44A2-9F4B-FBFE1BA07459}" Name="_CommentCount" SourceID="http://schemas.microsoft.com/sharepoint/v3" StaticName="_CommentCount" ReadOnly="TRUE" Type="Lookup" List="Docs" ShowField="CommentCount" DisplayName="Comment count" FromBaseType="TRUE" DisplaceOnUpgrade="TRUE" FieldRef="ID" JoinColName="DoclibRowId" JoinRowOrdinal="0" JoinType="INNER" />
+        <Field ID="{434F51FB-FFD2-4A0E-A03B-CA3131AC67BA}" Name="Ratings" StaticName="Ratings" DisplayName="User ratings" Description="User ratings for the item" Group="_Hidden" Type="Note" Hidden="TRUE" ForcePromoteDemote="TRUE" SourceID="http://schemas.microsoft.com/sharepoint/v3" />
+        <Field ID="{C274CBFD-084A-4017-925F-CCE50C9E3EEC}" Name="_CommentFlags" SourceID="http://schemas.microsoft.com/sharepoint/v3" StaticName="_CommentFlags" Hidden="TRUE" Group="_Hidden" ReadOnly="TRUE" Type="Lookup" List="Docs" ShowField="CommentFlags" DisplayName="Comment settings" FromBaseType="TRUE" DisplaceOnUpgrade="TRUE" FieldRef="ID" JoinColName="DoclibRowId" JoinRowOrdinal="0" JoinType="INNER" />
+      </pnp:SiteFields>
+      <pnp:Lists>
+        <pnp:ListInstance Title="Documents" Description="" DocumentTemplate="{site}/Shared Documents/Forms/template.dotx" OnQuickLaunch="true" TemplateType="101" Url="Shared Documents" EnableVersioning="true" MinorVersionLimit="0" MaxVersionLimit="500" DraftVersionVisibility="0" TemplateFeatureID="00bfea71-e717-4e80-aa17-d0c71b360101" EnableAttachments="false">
+          <pnp:ContentTypeBindings>
+            <pnp:ContentTypeBinding ContentTypeID="0x0101" Default="true" />
+            <pnp:ContentTypeBinding ContentTypeID="0x0120" />
+          </pnp:ContentTypeBindings>
+          <pnp:Views>
+            <View Name="{FA23C1E3-C840-4200-B043-B9E8ABD0A288}" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" Type="HTML" DisplayName="All Documents" Url="/sites/PnPTemplateC/Shared Documents/Forms/AllItems.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/dlicon.png?rev=44">
+              <Query>
+                <OrderBy>
+                  <FieldRef Name="FileLeafRef" />
+                </OrderBy>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="DocIcon" />
+                <FieldRef Name="LinkFilename" />
+                <FieldRef Name="Modified" />
+                <FieldRef Name="Editor" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <JSLink>clienttemplates.js</JSLink>
+            </View>
+          </pnp:Views>
+          <pnp:FieldRefs>
+            <pnp:FieldRef ID="ccc1037f-f65e-434a-868e-8c98af31fe29" Name="_ComplianceFlags" DisplayName="Label setting" />
+            <pnp:FieldRef ID="d4b6480a-4bed-4094-9a52-30181ea38f1d" Name="_ComplianceTag" DisplayName="Labels" />
+            <pnp:FieldRef ID="92be610e-ddbb-49f4-b3b1-5c2bc768df8f" Name="_ComplianceTagWrittenTime" DisplayName="Label Applied" />
+            <pnp:FieldRef ID="418d7676-2d6f-42cf-a16a-e43d2971252a" Name="_ComplianceTagUserId" DisplayName="Label applied by" />
+            <pnp:FieldRef ID="8382d247-72a9-44b1-9794-7b177edc89f3" Name="_IsRecord" DisplayName="Item is a Record" />
+            <pnp:FieldRef ID="d307dff3-340f-44a2-9f4b-fbfe1ba07459" Name="_CommentCount" DisplayName="Comment count" />
+            <pnp:FieldRef ID="db8d9d6d-dc9a-4fbd-85f3-4a753bfdc58c" Name="_LikeCount" DisplayName="Like count" />
+            <pnp:FieldRef ID="3a6b296c-3f50-445c-a13f-9c679ea9dda3" Name="ComplianceAssetId" DisplayName="Compliance Asset Id" />
+          </pnp:FieldRefs>
+        </pnp:ListInstance>
+        <pnp:ListInstance Title="Form Templates" Description="This library contains administrator-approved form templates that were activated to this site collection." DocumentTemplate="" TemplateType="101" Url="FormServerTemplates" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="0" TemplateFeatureID="00bfea71-e717-4e80-aa17-d0c71b360101" EnableAttachments="false" EnableFolderCreation="false">
+          <pnp:ContentTypeBindings>
+            <pnp:ContentTypeBinding ContentTypeID="0x010100F8EF98760CBA4A94994F13BA881038FA" Default="true" />
+          </pnp:ContentTypeBindings>
+          <pnp:Views>
+            <View Name="{5DB0307F-21F1-4317-BC32-F29D5979528C}" MobileView="TRUE" Type="HTML" DisplayName="All Documents" Url="/sites/PnPTemplateC/FormServerTemplates/Forms/AllItems.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/dlicon.png?rev=44">
+              <Query>
+                <OrderBy>
+                  <FieldRef Name="FileLeafRef" />
+                </OrderBy>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="DocIcon" />
+                <FieldRef Name="LinkFilename" />
+                <FieldRef Name="Modified" />
+                <FieldRef Name="Editor" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <JSLink>clienttemplates.js</JSLink>
+            </View>
+            <View Name="{728CFA32-DEF5-4C3C-B4DE-B01CA49329DC}" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" Type="HTML" DisplayName="All Forms" Url="/sites/PnPTemplateC/FormServerTemplates/Forms/All Forms.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/dlicon.png?rev=44">
+              <Query>
+                <GroupBy Collapse="FALSE">
+                  <FieldRef Name="FormCategory" />
+                </GroupBy>
+                <OrderBy>
+                  <FieldRef Name="FormName" />
+                </OrderBy>
+                <Where>
+                  <Neq>
+                    <FieldRef Name="ShowInCatalog" />
+                    <Value Type="Boolean">0</Value>
+                  </Neq>
+                </Where>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="DocIcon" />
+                <FieldRef Name="LinkFilename" />
+                <FieldRef Name="FormName" />
+                <FieldRef Name="FormDescription" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <JSLink>clienttemplates.js</JSLink>
+            </View>
+          </pnp:Views>
+          <pnp:FieldRefs>
+            <pnp:FieldRef ID="3a6b296c-3f50-445c-a13f-9c679ea9dda3" Name="ComplianceAssetId" DisplayName="Compliance Asset Id" />
+            <pnp:FieldRef ID="66b691cf-07a3-4ca6-ac6d-27fa969c8569" Name="FormName" DisplayName="Form Name" />
+            <pnp:FieldRef ID="65572d4d-445a-43f1-9c77-3358222a2c93" Name="FormCategory" DisplayName="Form Category" />
+            <pnp:FieldRef ID="94ad6f7c-09a1-42ca-974f-d24e080160c2" Name="FormVersion" DisplayName="Form Version" />
+            <pnp:FieldRef ID="1a03fa74-8c63-40cc-bd06-73b580bd8744" Name="FormId" DisplayName="Form ID" />
+            <pnp:FieldRef ID="96c27c9d-33f5-4f8e-893e-684014bc7090" Name="FormLocale" DisplayName="Form Locale" />
+            <pnp:FieldRef ID="1fff255c-6c88-4a76-957b-ae24bf07b78c" Name="FormDescription" DisplayName="Form Description" />
+            <pnp:FieldRef ID="4ef69ca4-4179-4d27-9e6c-f9544d45dfdc" Name="ShowInCatalog" DisplayName="Show in Catalog" />
+            <pnp:FieldRef ID="1a03fa74-8c63-40cc-bd06-73b580bd8743" Name="LinkTemplateName" DisplayName="Form Name" />
+            <pnp:FieldRef ID="ccc1037f-f65e-434a-868e-8c98af31fe29" Name="_ComplianceFlags" DisplayName="Label setting" />
+            <pnp:FieldRef ID="d4b6480a-4bed-4094-9a52-30181ea38f1d" Name="_ComplianceTag" DisplayName="Labels" />
+            <pnp:FieldRef ID="92be610e-ddbb-49f4-b3b1-5c2bc768df8f" Name="_ComplianceTagWrittenTime" DisplayName="Label Applied" />
+            <pnp:FieldRef ID="418d7676-2d6f-42cf-a16a-e43d2971252a" Name="_ComplianceTagUserId" DisplayName="Label applied by" />
+            <pnp:FieldRef ID="8382d247-72a9-44b1-9794-7b177edc89f3" Name="_IsRecord" DisplayName="Item is a Record" />
+            <pnp:FieldRef ID="d307dff3-340f-44a2-9f4b-fbfe1ba07459" Name="_CommentCount" DisplayName="Comment count" />
+            <pnp:FieldRef ID="db8d9d6d-dc9a-4fbd-85f3-4a753bfdc58c" Name="_LikeCount" DisplayName="Like count" />
+          </pnp:FieldRefs>
+        </pnp:ListInstance>
+        <pnp:ListInstance Title="Site Pages" Description="" DocumentTemplate="" TemplateType="119" Url="SitePages" EnableVersioning="true" EnableMinorVersions="true" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="1" TemplateFeatureID="00bfea71-c796-4402-9f2f-0eb9a6e71b18" ContentTypesEnabled="true" EnableAttachments="false" EnableFolderCreation="false">
+          <pnp:ContentTypeBindings>
+            <pnp:ContentTypeBinding ContentTypeID="0x010108" Default="true" />
+            <pnp:ContentTypeBinding ContentTypeID="0x01010901" />
+            <pnp:ContentTypeBinding ContentTypeID="0x0101009D1CB255DA76424F860D91F20E6C4118" />
+            <pnp:ContentTypeBinding ContentTypeID="0x0120" />
+          </pnp:ContentTypeBindings>
+          <pnp:Views>
+            <View Name="{D7204A93-C3B9-4205-95B3-B762A150AB4E}" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" Type="HTML" DisplayName="By Author" Url="/sites/PnPTemplateC/SitePages/Forms/ByAuthor.aspx" Level="1" BaseViewID="4" ContentTypeID="0x" ToolbarTemplate="WikiLibraryViewToolBar" ImageUrl="/_layouts/15/images/dlicon.png?rev=44">
+              <Query>
+                <GroupBy Collapse="FALSE">
+                  <FieldRef Name="Author" />
+                </GroupBy>
+                <OrderBy>
+                  <FieldRef Name="Modified" />
+                </OrderBy>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="DocIcon" />
+                <FieldRef Name="LinkFilename" />
+                <FieldRef Name="Editor" />
+                <FieldRef Name="Modified" />
+                <FieldRef Name="Created" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <JSLink>clienttemplates.js</JSLink>
+            </View>
+            <View Name="{6E2D0E64-85ED-40C3-943E-21888BDC4CBF}" Type="HTML" DisplayName="All Pages" Url="/sites/PnPTemplateC/SitePages/Forms/AllPages.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ToolbarTemplate="WikiLibraryViewToolBar" ImageUrl="/_layouts/15/images/dlicon.png?rev=44">
+              <Query>
+                <OrderBy>
+                  <FieldRef Name="Modified" Ascending="FALSE" />
+                </OrderBy>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="DocIcon" />
+                <FieldRef Name="LinkFilename" />
+                <FieldRef Name="Editor" />
+                <FieldRef Name="Modified" />
+                <FieldRef Name="Author" />
+                <FieldRef Name="Created" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <JSLink>clienttemplates.js</JSLink>
+            </View>
+            <View Name="{758EEA5E-78D4-4E05-AD19-CEBC9DE28EA3}" Type="HTML" DisplayName="Recent Changes" Url="/sites/PnPTemplateC/SitePages/Forms/RecentChanges.aspx" Level="1" BaseViewID="2" ContentTypeID="0x" ToolbarTemplate="WikiLibraryViewToolBar" ImageUrl="/_layouts/15/images/dlicon.png?rev=44">
+              <Query>
+                <OrderBy>
+                  <FieldRef Name="Modified" Ascending="FALSE" />
+                </OrderBy>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="DocIcon" />
+                <FieldRef Name="LinkFilename" />
+                <FieldRef Name="Editor" />
+                <FieldRef Name="Modified" />
+                <FieldRef Name="Author" />
+                <FieldRef Name="Created" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <JSLink>clienttemplates.js</JSLink>
+            </View>
+            <View Name="{C0349767-7E6B-4C5F-A8BD-B2F2E07E8BBF}" Type="HTML" DisplayName="By Editor" Url="/sites/PnPTemplateC/SitePages/Forms/ByEditor.aspx" Level="1" BaseViewID="5" ContentTypeID="0x" ToolbarTemplate="WikiLibraryViewToolBar" ImageUrl="/_layouts/15/images/dlicon.png?rev=44">
+              <Query>
+                <GroupBy Collapse="FALSE">
+                  <FieldRef Name="Editor" />
+                </GroupBy>
+                <OrderBy>
+                  <FieldRef Name="FileLeafRef" />
+                </OrderBy>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="DocIcon" />
+                <FieldRef Name="LinkFilename" />
+                <FieldRef Name="Editor" />
+                <FieldRef Name="Modified" />
+                <FieldRef Name="Author" />
+                <FieldRef Name="Created" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <JSLink>clienttemplates.js</JSLink>
+            </View>
+            <View Name="{92AE8DE3-D6DA-44B7-AEAC-1C0F4F7A371E}" Type="HTML" DisplayName="Created By Me" Url="/sites/PnPTemplateC/SitePages/Forms/CreatedByMe.aspx" Level="1" BaseViewID="3" ContentTypeID="0x" ToolbarTemplate="WikiLibraryViewToolBar" ImageUrl="/_layouts/15/images/dlicon.png?rev=44">
+              <Query>
+                <Where>
+                  <Eq>
+                    <FieldRef Name="Author" />
+                    <Value Type="Integer">
+                      <UserID />
+                    </Value>
+                  </Eq>
+                </Where>
+                <OrderBy>
+                  <FieldRef Name="FileLeafRef" />
+                </OrderBy>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="DocIcon" />
+                <FieldRef Name="LinkFilename" />
+                <FieldRef Name="Editor" />
+                <FieldRef Name="Modified" />
+                <FieldRef Name="Author" />
+                <FieldRef Name="Created" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <JSLink>clienttemplates.js</JSLink>
+            </View>
+          </pnp:Views>
+          <pnp:FieldRefs>
+            <pnp:FieldRef ID="c33527b4-d920-4587-b791-45024d00068a" Name="WikiField" DisplayName="Wiki Content" />
+            <pnp:FieldRef ID="4966388e-6e12-4bc6-8990-5b5b66153eae" Name="CanvasContent1" DisplayName="Authoring Canvas Content" />
+            <pnp:FieldRef ID="5baf6db5-9d25-4738-b15e-db5789298e82" Name="BannerImageUrl" DisplayName="Banner Image URL" />
+            <pnp:FieldRef ID="3f155110-a6a2-4d70-926c-94648101f0e8" Name="Description" DisplayName="Description" />
+            <pnp:FieldRef ID="f5ad16a2-85be-46b2-b5f0-2bb8b4a5074a" Name="PromotedState" DisplayName="Promoted State" />
+            <pnp:FieldRef ID="c84f8697-331e-457d-884a-c4fb8f30ea74" Name="FirstPublishedDate" DisplayName="First Published Date" />
+            <pnp:FieldRef ID="261075db-0525-4fb8-a6ea-772014186599" Name="LayoutWebpartsContent" DisplayName="Page Layout Content" />
+          </pnp:FieldRefs>
+        </pnp:ListInstance>
+      </pnp:Lists>
+      <pnp:Features>
+        <pnp:SiteFeatures>
+          <pnp:Feature ID="3019c9b4-e371-438d-98f6-0a08c34d06eb" />
+          <pnp:Feature ID="915c240e-a6cc-49b8-8b2c-0bff8b553ed3" />
+        </pnp:SiteFeatures>
+        <pnp:WebFeatures>
+          <pnp:Feature ID="48a9b9ab-a7e2-4f41-869c-353a45c52cfc" />
+          <pnp:Feature ID="de12eebe-9114-4a4a-b7da-7585dc36a907" />
+        </pnp:WebFeatures>
+      </pnp:Features>
+      <pnp:Files>
+        <pnp:File Src="SitePages\Home.aspx" Folder="{site}/SitePages" Overwrite="true" Level="Published">
+          <pnp:Properties>
+            <pnp:Property Key="ContentTypeId" Value="{contenttypeid:Site Page}" />
+            <pnp:Property Key="Title" Value="Home" />
+            <pnp:Property Key="ClientSideApplicationId" Value="b6917cb1-93a0-4b97-a84d-7cf49975d4ec" />
+            <pnp:Property Key="PageLayoutType" Value="Home" />
+            <pnp:Property Key="_ListSchemaVersion" Value="37" />
+            <pnp:Property Key="_Dirty" Value="0" />
+            <pnp:Property Key="_Parsable" Value="1" />
+          </pnp:Properties>
+        </pnp:File>
+      </pnp:Files>
+    </pnp:ProvisioningTemplate>
+  </pnp:Templates>
+</pnp:Provisioning>
