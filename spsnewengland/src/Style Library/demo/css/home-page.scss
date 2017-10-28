@@ -1,0 +1,39 @@
+@import 'base/base';
+@import 'partials/variables';
+@import 'partials/resets';
+@import 'partials/utility';
+@import 'partials/typography';
+@import 'partials/body';
+@import 'partials/webparts';
+#sideNavBox {
+    display: none;
+}
+
+#contentBox {
+    margin: 0;
+    padding: 0;
+}
+
+.home-page-layout {
+    padding: 0 20px;
+}
+
+@include breakpoint(m) {
+    $spacing: 2.5px;
+    .orange-headers {
+        padding-right: $spacing;
+    }
+    .blue-headers {
+        padding-left: $spacing;
+        padding-right: $spacing;
+    }
+    .gold-headers {
+        padding-right: $spacing;
+    }
+    .black-headers {
+        padding-left: $spacing;
+    }
+    .grey-headers {
+        padding-left: $spacing * 2;
+    }
+}

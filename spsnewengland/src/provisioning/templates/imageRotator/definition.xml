@@ -1,0 +1,132 @@
+<?xml version="1.0"?>
+<pnp:Provisioning 
+    xmlns:pnp="http://schemas.dev.office.com/PnP/2017/05/ProvisioningSchema" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.dev.office.com/PnP/2017/05/ProvisioningSchema https://raw.githubusercontent.com/OfficeDev/PnP-Provisioning-Schema/master/OfficeDevPnP.ProvisioningSchema/ProvisioningSchema-2017-05.xsd">
+    <pnp:Preferences Author="Thomas Daly" Version="1.0" Generator="BR Business Solutions">
+    </pnp:Preferences>
+    <pnp:Templates>
+        <pnp:ProvisioningTemplate ID="ImageRotator" Version="1">
+            <pnp:SiteFields>
+                <Field ID="{E492B795-7BA2-4A51-9954-E9EE214F8377}" Name="ImageRotatorImage" StaticName="ImageRotatorImage" DisplayName="Image" Type="Image" Group="Image Rotator Site Columns" Required="false" Overwrite="TRUE" RichText="FALSE" />
+                <Field ID="{19B2C070-A95A-418E-A9EB-2EEAB5EE290A}" Name="ImageRotatorUrl" StaticName="ImageRotatorUrl" DisplayName="URL" Type="Text" Group="Image Rotator Site Columns" Required="FALSE" Overwrite="TRUE" MaxLength="255" />
+                <Field ID="{40A02CC1-E705-42C0-BA3B-F7B0D0087A8D}" Name="ImageRotatorOpenInNewWindow" StaticName="ImageRotatorOpenInNewWindow" DisplayName="Open in new window" Type="Boolean" Group="Image Rotator Site Columns" Overwrite="TRUE" Required="FALSE">
+                    <Default>1</Default>
+                </Field>                
+                <Field ID="{F5898964-ED69-458B-B565-F2CAF8F910AB}" Name="ImageRotatorText" StaticName="ImageRotatorText" DisplayName="Text" Type="Note" Group="Image Rotator Site Columns" Overwrite="TRUE" Required="FALSE" RichText="TRUE" RichTextMode="FullHtml" NumLines="6" />
+                <Field ID="{D6003179-4BFB-480A-9777-7A20FAA3371C}" Name="ImageRotatorVerticalTextPosition" StaticName="ImageRotatorVerticalTextPosition" DisplayName="Vertical Position" Type="Choice" Group="Image Rotator Site Columns" Required="FALSE" Overwrite="TRUE">
+                    <CHOICES>
+                        <CHOICE>Top</CHOICE>
+                        <CHOICE>Middle</CHOICE>
+                        <CHOICE>Bottom</CHOICE>
+                    </CHOICES>
+                    <Default>Bottom</Default>
+                </Field>
+                <Field ID="{944840C9-C22A-42FF-8A38-66B79A1BD4BC}" Name="ImageRotatorHorizontalTextPosition" StaticName="ImageRotatorHorizontalTextPosition" DisplayName="Horizontal Position" Type="Choice" Group="Image Rotator Site Columns" Required="FALSE" SourceID="http://schemas.microsoft.com/sharepoint/v3" Hidden="FALSE" Sealed="FALSE" Overwrite="TRUE">
+                    <CHOICES>
+                        <CHOICE>Left</CHOICE>
+                        <CHOICE>Center</CHOICE>
+                        <CHOICE>Right</CHOICE>
+                    </CHOICES>
+                    <Default>Left</Default>
+                </Field>
+                <Field ID="{89E47BD8-27DB-434D-AC35-3067751BE695}" Name="ImageRotatorSequence" StaticName="ImageRotatorSequence" SourceID="http://schemas.microsoft.com/sharepoint/v3" Group="Image Rotator Site Columns" DisplayName="Sequence" Type="Number" Required="FALSE" Min="0" Max="9999" Sealed="TRUE" />
+            </pnp:SiteFields>
+            <pnp:ContentTypes>
+                <pnp:ContentType ID="0x01000668A41CED0840E0AB7A0B2FE1AF74AD" Name="Image Rotator Content Type" Group="Custom Content Types" Description="Image Rotator Content Type" Inherits="TRUE">
+                    <pnp:FieldRefs>
+                        <!-- the property values, such as Required="true", appears to be case sensitive -->
+                        <pnp:FieldRef ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" Required="false" Hidden="true"/>
+                        <!-- hide title -->
+                        <pnp:FieldRef ID="{E492B795-7BA2-4A51-9954-E9EE214F8377}" Required="true"/>
+                        <pnp:FieldRef ID="{19B2C070-A95A-418E-A9EB-2EEAB5EE290A}"/>
+                        <pnp:FieldRef ID="{40A02CC1-E705-42C0-BA3B-F7B0D0087A8D}"/>
+                        <pnp:FieldRef ID="{F5898964-ED69-458B-B565-F2CAF8F910AB}"/>
+                        <pnp:FieldRef ID="{D6003179-4BFB-480A-9777-7A20FAA3371C}"/>
+                        <pnp:FieldRef ID="{944840C9-C22A-42FF-8A38-66B79A1BD4BC}"/>
+                        <pnp:FieldRef ID="{89E47BD8-27DB-434D-AC35-3067751BE695}"/>
+                    </pnp:FieldRefs>
+                </pnp:ContentType>
+            </pnp:ContentTypes>
+            <pnp:Lists>
+                <pnp:ListInstance Title="Image Rotator List" Description="" OnQuickLaunch="true" EnableFolderCreation="false" TemplateType="100" Url="Lists/ImageRotatorList" RemoveExistingContentTypes="true">
+                    <pnp:ContentTypeBindings>
+                        <pnp:ContentTypeBinding ContentTypeID="0x01000668A41CED0840E0AB7A0B2FE1AF74AD" Default="true"/>
+                    </pnp:ContentTypeBindings>
+                    <pnp:Views RemoveExistingViews="true">
+                        <View BaseViewID="1" Type="HTML" WebPartZoneID="Main" DisplayName="$Resources:core,objectiv_schema_mwsidcamlidC24;" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" SetupPath="pages\viewpage.aspx" ImageUrl="/_layouts/15/images/generic.png?rev=23" Url="AllItems.aspx">
+                            <Toolbar Type="Standard" />
+                            <XslLink Default="TRUE">main.xsl</XslLink>
+                            <JSLink>clienttemplates.js</JSLink>
+                            <RowLimit Paged="TRUE">30</RowLimit>
+                            <ViewFields>
+                                <FieldRef Name="Edit"></FieldRef>
+                                <FieldRef Name="ImageRotatorImage"></FieldRef>
+                                <FieldRef Name="ImageRotatorUrl"></FieldRef>
+                                <FieldRef Name="ImageRotatorOpenInNewWindow"></FieldRef>
+                                <FieldRef Name="ImageRotatorText"></FieldRef>
+                                <FieldRef Name="ImageRotatorVerticalTextPosition"></FieldRef>
+                                <FieldRef Name="ImageRotatorHorizontalTextPosition"></FieldRef>
+                                <FieldRef Name="ImageRotatorSequence"></FieldRef>
+                            </ViewFields>
+                            <Query>
+                                <OrderBy>
+                                    <FieldRef Name="ID"></FieldRef>
+                                </OrderBy>
+                            </Query>
+                            <ParameterBindings>
+                                <ParameterBinding Name="NoAnnouncements" Location="Resource(wss,noXinviewofY_LIST)" />
+                                <ParameterBinding Name="NoAnnouncementsHowTo" Location="Resource(wss,noXinviewofY_DEFAULT)" />
+                            </ParameterBindings>
+                        </View>
+                        <View BaseViewID="2" Type="HTML" WebPartZoneID="Main" DisplayName="Rotator" DefaultView="FALSE" MobileView="FALSE" MobileDefaultView="FALSE" SetupPath="pages\viewpage.aspx" ImageUrl="/_layouts/15/images/generic.png?rev=23" Url="Rotator.aspx">
+                            <Toolbar Type="Standard" />
+                            <XslLink Default="TRUE">main.xsl</XslLink>
+                            <JSLink>~siteCollection/Style Library/demo/jslink/image-rotator.js</JSLink>
+                            <RowLimit Paged="FALSE">100</RowLimit>
+                            <ViewFields>
+                                <FieldRef Name="Edit"></FieldRef>
+                                <FieldRef Name="ImageRotatorImage"></FieldRef>
+                                <FieldRef Name="ImageRotatorUrl"></FieldRef>
+                                <FieldRef Name="ImageRotatorOpenInNewWindow"></FieldRef>
+                                <FieldRef Name="ImageRotatorText"></FieldRef>
+                                <FieldRef Name="ImageRotatorVerticalTextPosition"></FieldRef>
+                                <FieldRef Name="ImageRotatorHorizontalTextPosition"></FieldRef>
+                                <FieldRef Name="ImageRotatorSequence"></FieldRef>
+                            </ViewFields>
+                            <Query>
+                                <OrderBy>
+                                    <FieldRef Name="ImageRotatorSequence"></FieldRef>
+                                </OrderBy>
+                            </Query>
+                            <ParameterBindings>
+                                <ParameterBinding Name="NoAnnouncements" Location="Resource(wss,noXinviewofY_LIST)" />
+                                <ParameterBinding Name="NoAnnouncementsHowTo" Location="Resource(wss,noXinviewofY_DEFAULT)" />
+                            </ParameterBindings>
+                        </View>
+                    </pnp:Views>
+                    <pnp:DataRows KeyColumn="ImageRotatorSequence" UpdateBehavior="Skip">
+                        <pnp:DataRow>
+                            <pnp:DataValue FieldName="ImageRotatorImage">&lt;img src=&#34;https://images.pexels.com/photos/33152/european-rabbits-bunnies-grass-wildlife.jpg&#34;/&gt;</pnp:DataValue>
+                            <pnp:DataValue FieldName="ImageRotatorUrl">http://www.microsoft.com,Microsoft</pnp:DataValue>
+                            <pnp:DataValue FieldName="ImageRotatorText">Test Item 1</pnp:DataValue>
+                            <pnp:DataValue FieldName="ImageRotatorVerticalTextPosition">Top</pnp:DataValue>
+                            <pnp:DataValue FieldName="ImageRotatorHorizontalTextPosition">Left</pnp:DataValue>
+                            <pnp:DataValue FieldName="ImageRotatorSequence">1</pnp:DataValue>
+                        </pnp:DataRow>
+                        <pnp:DataRow>
+                            <pnp:DataValue FieldName="ImageRotatorImage">&lt;img src=&#34;https://images.pexels.com/photos/28549/pexels-photo.jpg&#34;/&gt;</pnp:DataValue>
+                            <pnp:DataValue FieldName="ImageRotatorUrl">http://www.microsoft.com,Microsoft</pnp:DataValue>
+                            <pnp:DataValue FieldName="ImageRotatorText">Test Item 2</pnp:DataValue>
+                            <pnp:DataValue FieldName="ImageRotatorSequence">2</pnp:DataValue>
+                        </pnp:DataRow>                        
+                    </pnp:DataRows>
+                </pnp:ListInstance>
+            </pnp:Lists>        
+            <pnp:Files>
+                <pnp:File Src="..\..\..\Style Library\demo\jslink\image-rotator.js" Folder="Style Library/demo/jslink" Overwrite="true"/>
+                <pnp:File Src="..\..\..\Style Library\demo\js\rotating-item-wp.js" Folder="Style Library/demo/js" Overwrite="true"/>
+                <pnp:File Src="..\..\..\Style Library\demo\vendor\jCycle2\jquery.cycle2.min.js" Folder="Style Library/demo/vendor/jCycle2" Overwrite="true"/>
+            </pnp:Files>
+        </pnp:ProvisioningTemplate>
+    </pnp:Templates>
+</pnp:Provisioning>

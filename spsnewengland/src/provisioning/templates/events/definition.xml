@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<pnp:Provisioning 
+    xmlns:pnp="http://schemas.dev.office.com/PnP/2017/05/ProvisioningSchema" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.dev.office.com/PnP/2017/05/ProvisioningSchema https://raw.githubusercontent.com/OfficeDev/PnP-Provisioning-Schema/master/OfficeDevPnP.ProvisioningSchema/ProvisioningSchema-2017-05.xsd">
+    <pnp:Preferences Author="Thomas Daly" Version="1.0" Generator="BR Business Solutions">
+    </pnp:Preferences>
+    <pnp:Templates>
+        <pnp:ProvisioningTemplate ID="Events" Version="1">
+            <pnp:Lists>
+                <pnp:ListInstance Title="Events" Description="" OnQuickLaunch="true" EnableFolderCreation="false" TemplateType="106" Url="Lists/Events" RemoveExistingContentTypes="false">
+                    <pnp:ContentTypeBindings>
+                        <pnp:ContentTypeBinding ContentTypeID="0x0102" Default="true" />
+                    </pnp:ContentTypeBindings>  
+                    <pnp:Views RemoveExistingViews="false">
+                         <View BaseViewID="4" Type="HTML" WebPartZoneID="Main" DisplayName="Rollup" DefaultView="FALSE" MobileView="FALSE" MobileDefaultView="FALSE" SetupPath="pages\viewpage.aspx" ImageUrl="/_layouts/15/images/generic.png?rev=23" Url="Rollup.aspx">
+                            <Toolbar Type="Standard" />
+                            <XslLink Default="TRUE">main.xsl</XslLink>
+                            <JSLink>~siteCollection/Style Library/demo/jslink/events.js</JSLink>
+                            <RowLimit Paged="FALSE">4</RowLimit>
+                            <ViewFields>
+                                <FieldRef Name="LinkTitle"></FieldRef>
+                                <FieldRef Name="Location"></FieldRef>
+                                <FieldRef Name="EventDate"></FieldRef>
+                            </ViewFields>
+                            <Query>
+                                <Where> 
+                                    <Geq>
+                                        <FieldRef Name="EventDate" />
+                                            <Value Type="DateTime">
+                                                <Today/>
+                                            </Value>
+                                    </Geq>
+                                </Where>
+                                <OrderBy>
+                                    <FieldRef Name="EventDate"></FieldRef>
+                                </OrderBy>
+                            </Query>
+                            <ParameterBindings>
+                                <ParameterBinding Name="NoEvents" Location="Resource(wss,noXinviewofY_LIST)" />
+                                <ParameterBinding Name="NoEventsHowTo" Location="Resource(wss,noXinviewofY_DEFAULT)" />
+                            </ParameterBindings>
+                        </View>
+                    </pnp:Views>
+                </pnp:ListInstance>
+            </pnp:Lists>        
+            <pnp:Files>
+                <pnp:File Src="..\..\..\Style Library\demo\jslink\events.js" Folder="Style Library/demo/jslink" Overwrite="true"/>
+                <pnp:File Src="..\..\..\Style Library\demo\vendor\moment\moment.min.js" Folder="Style Library/demo/vendor/moment" Overwrite="true"/>
+            </pnp:Files>
+        </pnp:ProvisioningTemplate>
+    </pnp:Templates>
+</pnp:Provisioning>

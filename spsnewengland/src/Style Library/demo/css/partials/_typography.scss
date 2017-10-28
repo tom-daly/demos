@@ -1,0 +1,17 @@
+@mixin Lato {
+    font-family: 'Lato', sans-serif;
+}
+@mixin RobotoCondensed {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+@mixin AlegreyaSansSC {
+    font-family: 'Alegreya Sans SC', sans-serif;
+}
+@mixin FontAwesome {
+    font-family: 'FontAwesome';
+}
+body, .ms-core-defaultFont, #pageStatusBar, .ms-status-msg, .js-callout-body {
+    @include Lato;
+    font-size: 13px;
+    color: $textColor;
+}

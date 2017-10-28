@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+<pnp:Provisioning 
+    xmlns:pnp="http://schemas.dev.office.com/PnP/2017/05/ProvisioningSchema" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.dev.office.com/PnP/2017/05/ProvisioningSchema https://raw.githubusercontent.com/OfficeDev/PnP-Provisioning-Schema/master/OfficeDevPnP.ProvisioningSchema/ProvisioningSchema-2017-05.xsd">
+    <pnp:Preferences Author="Thomas Daly" Version="1.0" Generator="BR Business Solutions">
+    </pnp:Preferences>
+    <pnp:Templates>
+        <pnp:ProvisioningTemplate ID="NavButtons" Version="1">
+            <pnp:SiteFields>
+                <Field ID="{13129BF1-A206-479D-BECA-DC335DE4FBDA}" Name="NavButtonsImage" StaticName="NavButtonsImage" DisplayName="Image" Type="Image" Group="Nav Buttons Site Columns" Required="false" Overwrite="TRUE" RichText="FALSE" />
+                <Field ID="{21925855-F573-4F77-A7A3-9CFBA479FD62}" Name="NavButtonsUrl" StaticName="NavButtonsUrl" DisplayName="URL" Type="Text" Group="Nav Buttons Site Columns" Required="FALSE" Overwrite="TRUE" MaxLength="255" />
+                <Field ID="{5DBAB6B9-C264-467F-8C3C-5C682A2EFF9F}" Name="NavButtonsText" StaticName="NavButtonsText" DisplayName="Text" Type="Note" Group="Nav Buttons Site Columns" Overwrite="TRUE" Required="FALSE" RichText="TRUE" RichTextMode="FullHtml" NumLines="6" />
+                <Field ID="{34C74734-A25E-41A6-BB8E-BB89F0A3C127}" Name="NavButtonsOpenInNewWindow" StaticName="NavButtonsOpenInNewWindow" DisplayName="Open in new window" Type="Boolean" Group="Nav Buttons Site Columns" Overwrite="TRUE" Required="FALSE">
+                    <Default>1</Default>
+                </Field>
+                <Field ID="{5934EF81-45BB-49A4-80C9-7070A5C09B02}" Name="NavButtonsSequence" StaticName="NavButtonsSequence" DisplayName="Sequence" Type="Number" Group="Nav Buttons Site Columns" Min="0" Max="9999" Overwrite="TRUE" Required="FALSE" />
+            </pnp:SiteFields>
+            <pnp:ContentTypes>
+                <pnp:ContentType ID="0x01000731BE09F9B940C3A07002C4D0F2A19C" Name="Nav Buttons Content Type" Group="Custom Content Types" Description="Nav Buttons Content Type" Inherits="TRUE">
+                    <pnp:FieldRefs>
+                        <!-- the property values, such as Required="true", appears to be case sensitive -->
+                        <pnp:FieldRef ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" Required="false" Hidden="true"/>
+                        <pnp:FieldRef ID="{13129BF1-A206-479D-BECA-DC335DE4FBDA}" Required="true"/>
+                        <pnp:FieldRef ID="{21925855-F573-4F77-A7A3-9CFBA479FD62}" Required="true"/>
+                        <pnp:FieldRef ID="{5DBAB6B9-C264-467F-8C3C-5C682A2EFF9F}" Required="true"/>
+                        <pnp:FieldRef ID="{34C74734-A25E-41A6-BB8E-BB89F0A3C127}"/>
+                        <pnp:FieldRef ID="{5934EF81-45BB-49A4-80C9-7070A5C09B02}"/>
+                    </pnp:FieldRefs>
+                </pnp:ContentType>
+            </pnp:ContentTypes>
+            <pnp:Lists>
+                <pnp:ListInstance Title="Nav Buttons List" Description="" OnQuickLaunch="true" EnableFolderCreation="false" TemplateType="100" Url="Lists/NavButtonsList" RemoveExistingContentTypes="true">
+                    <pnp:ContentTypeBindings>
+                        <pnp:ContentTypeBinding ContentTypeID="0x01000731BE09F9B940C3A07002C4D0F2A19C" Default="true"/>
+                    </pnp:ContentTypeBindings>
+                    <pnp:Views RemoveExistingViews="true">
+                        <View BaseViewID="1" Type="HTML" WebPartZoneID="Main" DisplayName="$Resources:core,objectiv_schema_mwsidcamlidC24;" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" SetupPath="pages\viewpage.aspx" ImageUrl="/_layouts/15/images/generic.png?rev=23" Url="AllItems.aspx">
+                            <Toolbar Type="Standard" />
+                            <XslLink Default="TRUE">main.xsl</XslLink>
+                            <JSLink>clienttemplates.js</JSLink>
+                            <RowLimit Paged="TRUE">30</RowLimit>
+                            <ViewFields>
+                                <FieldRef Name="Edit"></FieldRef>
+                                <FieldRef Name="NavButtonsText"></FieldRef>
+                                <FieldRef Name="NavButtonsUrl"></FieldRef>
+                                <FieldRef Name="NavButtonsImage"></FieldRef>
+                                <FieldRef Name="NavButtonsOpenInNewWindow"></FieldRef>
+                                <FieldRef Name="NavButtonsSequence"></FieldRef>
+                            </ViewFields>
+                            <Query>
+                                <OrderBy>
+                                    <FieldRef Name="NavButtonsSequence"></FieldRef>
+                                </OrderBy>
+                            </Query>
+                            <ParameterBindings>
+                                <ParameterBinding Name="NoAnnouncements" Location="Resource(wss,noXinviewofY_LIST)" />
+                                <ParameterBinding Name="NoAnnouncementsHowTo" Location="Resource(wss,noXinviewofY_DEFAULT)" />
+                            </ParameterBindings>
+                        </View>
+                        <View BaseViewID="2" Type="HTML" WebPartZoneID="Main" DisplayName="Rollup" DefaultView="FALSE" MobileView="FALSE" MobileDefaultView="FALSE" SetupPath="pages\viewpage.aspx" ImageUrl="/_layouts/15/images/generic.png?rev=23" Url="Rollup.aspx">
+                            <Toolbar Type="Standard" />
+                            <XslLink Default="TRUE">main.xsl</XslLink>
+                            <JSLink>~siteCollection/Style Library/demo/jslink/nav-buttons.js</JSLink>
+                            <RowLimit Paged="FALSE">100</RowLimit>
+                            <ViewFields>
+                                <FieldRef Name="Edit"></FieldRef>
+                                <FieldRef Name="NavButtonsText"></FieldRef>
+                                <FieldRef Name="NavButtonsUrl"></FieldRef>
+                                <FieldRef Name="NavButtonsImage"></FieldRef>
+                                <FieldRef Name="NavButtonsOpenInNewWindow"></FieldRef>
+                                <FieldRef Name="NavButtonsSequence"></FieldRef>
+                            </ViewFields>
+                            <Query>
+                                <OrderBy>
+                                    <FieldRef Name="NavButtonsSequence"></FieldRef>
+                                </OrderBy>
+                            </Query>
+                            <ParameterBindings>
+                                <ParameterBinding Name="NoAnnouncements" Location="Resource(wss,noXinviewofY_LIST)" />
+                                <ParameterBinding Name="NoAnnouncementsHowTo" Location="Resource(wss,noXinviewofY_DEFAULT)" />
+                            </ParameterBindings>
+                        </View>
+                    </pnp:Views>
+                    <pnp:DataRows KeyColumn="NavButtonsSequence" UpdateBehavior="Skip">
+                        <pnp:DataRow>
+                            <pnp:DataValue FieldName="NavButtonsImage">&lt;img src=&#34;~siteCollection/SitesAssets/notebook.svg&#34;/&gt;</pnp:DataValue>
+                            <pnp:DataValue FieldName="NavButtonsUrl">http://www.microsoft.com</pnp:DataValue>
+                            <pnp:DataValue FieldName="NavButtonsText">The Learning Zone</pnp:DataValue>
+                            <pnp:DataValue FieldName="NavButtonsSequence">1</pnp:DataValue>
+                        </pnp:DataRow>
+                        <pnp:DataRow>
+                            <pnp:DataValue FieldName="NavButtonsImage">&lt;img src=&#34;~siteCollection/SiteAssets/clipboard.svg&#34;/&gt;</pnp:DataValue>
+                            <pnp:DataValue FieldName="NavButtonsUrl">http://www.microsoft.com</pnp:DataValue>
+                            <pnp:DataValue FieldName="NavButtonsText">Nexus</pnp:DataValue>
+                            <pnp:DataValue FieldName="NavButtonsSequence">2</pnp:DataValue>
+                        </pnp:DataRow>                        
+                    </pnp:DataRows>
+                </pnp:ListInstance>
+            </pnp:Lists>        
+            <pnp:Files>
+                <pnp:File Src="..\..\..\Style Library\demo\jslink\nav-buttons.js" Folder="Style Library/demo/jslink" Overwrite="true"/>
+            </pnp:Files>
+        </pnp:ProvisioningTemplate>
+    </pnp:Templates>
+</pnp:Provisioning>

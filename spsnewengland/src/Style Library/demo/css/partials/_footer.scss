@@ -1,0 +1,134 @@
+#footer {
+    background-color: $footerBg;
+    color: $white;
+    font-size: 12px;
+    padding: 20px;
+    .section {
+        border-top: 1px solid $lightGrey; 
+        padding: 10px 0;
+        @include breakpoint(m) {
+            border-top: 0;
+            padding: 0;
+        }
+        .section-content {
+            margin-top: 10px;
+            @include breakpoint(m) {
+                display: block !important;
+            }
+        }
+    }
+    .toggle-btn {
+        margin-right: 10px;
+    }
+    .social-icons {
+        text-align: center;
+        @include breakpoint(m) {
+            text-align: left;
+        }
+        li {
+            display: inline-block;
+            margin-right: 10px;
+            a {
+                @include link($white, $white);
+            }
+            i.fa-inverse {
+                color: $footerBg;
+            }
+        }
+        .fa-lg {
+            font-size: 2em;
+            @include breakpoint(m) {
+                font-size: 1.3333em;
+            }
+        }
+    }
+    h1 {
+        &,
+        a {
+            @include link($white, $white);
+            @include Lato;
+            font-weight: bold;
+            font-size: 16px;
+            color: $white;
+        }
+    }
+    ul:not(.social-icons) {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        li {
+            margin-bottom: 5px;
+            a {
+                @include link($white, $white);
+            }
+        }
+    }
+    .copyright {
+        text-align: center;
+        @include breakpoint(m) {
+            text-align: left;
+        }
+    }
+}
+
+#footer-events {
+    @include Lato;
+    display: table;
+    width: 90%;
+    .event-item {
+        display: table-row;
+        vertical-align: top;
+        clear: both;
+        &:first-child {
+            .event-date,
+            .info {
+                border-top: 0;
+                padding-top: 0;
+            }
+        }
+        .event-date {
+            display: table-cell;
+            padding: 10px 0;
+            border-top: 1px solid $white;
+            .event-month {
+                text-align: center;
+                width: 100%;
+                text-transform: uppercase;
+                color: $white;
+                font-size: 12px;
+                display: block;
+                letter-spacing: 1px;
+            }
+            .event-day {
+                text-align: center;
+                width: 100%;
+                text-transform: uppercase;
+                color: $white;
+                font-size: 25px;
+                line-height: 25px;
+                display: block;
+                @include AlegreyaSansSC;
+                letter-spacing: 2px;
+            }
+        }
+        .info {
+            border-top: 1px solid $white;
+            display: table-cell;
+            vertical-align: top;
+            width: 100%;
+            padding: 10px 0 10px 15px;
+        }
+        .title {
+            font-size: 13px;
+            margin-bottom: 5px;
+        }
+        .location {
+            font-size: 12px;
+            margin-bottom: 5px;
+            color: $white;
+        }
+        .read-more {
+            display: none;
+        }
+    }
+}

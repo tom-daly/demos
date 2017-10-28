@@ -1,0 +1,53 @@
+#DeltaPlaceHolderSearchArea {
+    float: none;
+    width: auto;
+    text-align: right;
+    white-space: nowrap; 
+    display: none;
+    margin: 10px;
+    @include breakpoint(m) {
+        margin: 10px 0 0 0;
+        display: block !important;
+    }
+    #searchInputBox {
+        margin: 0;
+        float: none;
+    }
+    .ms-srch-sb {
+        background-color: $veryLightBlue;
+        padding: 10px;
+        width: 100%;
+        @include breakpoint(m) {
+            min-width: 260px;
+        }
+        >input {
+            float: left;
+            width: 100%;
+            margin: 0 -60px 0 0;
+            padding: 0 60px 0 0;
+            color: $textColor;
+        }
+        @include box-sizing(border-box);
+        .ms-qSuggest-container {
+            box-shadow: none;
+            margin: 10px 0 0 -11px;
+        }
+    }
+    .ms-srch-sb-searchLink {
+        display: inline-block;
+        margin-left: 10px;
+        .ms-srch-sb-searchImg {
+            display: none;
+        }
+        &::after {
+            content: "";
+            background-image: url('../images/search-go.png');
+            height: 18px;
+            width: 18px;
+            display: inline-block;
+        }
+    }
+    .ms-srch-sb-border {
+        border-color: $lightBlue;
+    }
+}

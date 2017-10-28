@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<pnp:Provisioning 
+    xmlns:pnp="http://schemas.dev.office.com/PnP/2017/05/ProvisioningSchema" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.dev.office.com/PnP/2017/05/ProvisioningSchema https://raw.githubusercontent.com/OfficeDev/PnP-Provisioning-Schema/master/OfficeDevPnP.ProvisioningSchema/ProvisioningSchema-2017-05.xsd">
+    <pnp:Preferences Author="Thomas Daly" Version="1.0" Generator="BR Business Solutions">
+    </pnp:Preferences>
+    <pnp:Templates>
+        <pnp:ProvisioningTemplate ID="QuickLinks" Version="2">
+            <pnp:SiteFields>
+                <Field ID="{03B718D8-CAD2-40C9-BFBB-5C5A00985C3D}" Name="QuickLinksText" StaticName="NavButtonsText" DisplayName="Text" Type="Note" Group="Quick Links Site Columns" Overwrite="TRUE" Required="FALSE" RichText="TRUE" RichTextMode="FullHtml" NumLines="6" />
+                <Field ID="{C5905A3B-5AE8-4E5F-9F39-5A6C0C03C15D}" Name="QuickLinksUrl" StaticName="NavButtonsUrl" DisplayName="URL" Type="Text" Group="Quick Links Site Columns" Required="FALSE" Overwrite="TRUE" MaxLength="255" />
+                <Field ID="{610408A8-68E5-41AC-A2B4-9532716185B0}" Name="QuickLinksOpenInNewWindow" StaticName="QuickLinksOpenInNewWindow" DisplayName="Open In New Window" Type="Boolean" Group="Quick Links Site Columns" Required="FALSE" Overwrite="TRUE">
+                    <Default>1</Default>
+                </Field>
+                <Field ID="{ED428579-0F6B-4EA1-8D0D-D100ED8003D1}" Name="QuickLinksSequence" StaticName="QuickLinksSequence" DisplayName="Sequence" Type="Number" Group="Quick Links Site Columns" Required="FALSE" Overwrite="TRUE" Min="0" Max="999" />
+                <Field ID="{30454DA2-BB24-4FBE-9645-DDBC3161703D}" Name="QuickLinksCategory" StaticName="QuickLinksCategory" DisplayName="Category" Type="Choice" Group="Quick Links Site Columns" Required="FALSE" Overwrite="TRUE">
+                    <CHOICES>
+                        <CHOICE>Category 1</CHOICE>
+                        <CHOICE>Category 2</CHOICE>
+                        <CHOICE>Category 3</CHOICE>
+                    </CHOICES>
+                    <Default>Category 1</Default>
+                </Field>
+            </pnp:SiteFields>
+            <pnp:ContentTypes>
+                <pnp:ContentType ID="0x01003B6104A3B51B420688C5366E6D7F4A98" Name="Quick Links Content Type" Group="Custom Content Types" Description="Quick Links Content Type" Inherits="TRUE">
+                    <pnp:FieldRefs>
+                        <!-- the property values, such as Required="true", appears to be case sensitive -->
+                        <pnp:FieldRef ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" Required="false" Hidden="true"/><!-- remove title field -->
+                        <pnp:FieldRef ID="{03B718D8-CAD2-40C9-BFBB-5C5A00985C3D}"/>
+                        <pnp:FieldRef ID="{C5905A3B-5AE8-4E5F-9F39-5A6C0C03C15D}"/>
+                        <pnp:FieldRef ID="{610408A8-68E5-41AC-A2B4-9532716185B0}"/>
+                        <pnp:FieldRef ID="{ED428579-0F6B-4EA1-8D0D-D100ED8003D1}"/>
+                        <pnp:FieldRef ID="{30454DA2-BB24-4FBE-9645-DDBC3161703D}"/>
+                    </pnp:FieldRefs>
+                </pnp:ContentType>
+            </pnp:ContentTypes>           
+              <pnp:Lists>
+                <pnp:ListInstance Title="Quick Links List" Description="" OnQuickLaunch="true" EnableFolderCreation="false" TemplateType="100" Url="Lists/QuickLinksList" RemoveExistingContentTypes="true">
+                    <pnp:ContentTypeBindings>
+                        <pnp:ContentTypeBinding ContentTypeID="0x01003B6104A3B51B420688C5366E6D7F4A98" Default="true"/>
+                    </pnp:ContentTypeBindings>
+                    <pnp:Views RemoveExistingViews="true">
+                        <View BaseViewID="1" Type="HTML" WebPartZoneID="Main" DisplayName="$Resources:core,objectiv_schema_mwsidcamlidC24;" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" SetupPath="pages\viewpage.aspx" ImageUrl="/_layouts/15/images/generic.png?rev=23" Url="AllItems.aspx">
+                            <Toolbar Type="Standard" />
+                            <XslLink Default="TRUE">main.xsl</XslLink>
+                            <JSLink>clienttemplates.js</JSLink>
+                            <RowLimit Paged="TRUE">30</RowLimit>
+                            <ViewFields>
+                                <FieldRef Name="Edit"></FieldRef>
+                                <FieldRef Name="QuickLinksText"></FieldRef>
+                                <FieldRef Name="QuickLinksUrl"></FieldRef>
+                                <FieldRef Name="QuickLinksCategory"></FieldRef>
+                                <FieldRef Name="QuickLinksOpenInNewWindow"></FieldRef>
+                                <FieldRef Name="QuickLinksSequence"></FieldRef>
+                            </ViewFields>
+                            <Query>
+                                <GroupBy>
+                                    <FieldRef Name="QuickLinksCategory"/>
+                                </GroupBy>
+                                <OrderBy>
+                                    <FieldRef Name="QuickLinksSequence"/>
+                                </OrderBy>
+                            </Query>
+                            <ParameterBindings>
+                                <ParameterBinding Name="NoAnnouncements" Location="Resource(wss,noXinviewofY_LIST)" />
+                                <ParameterBinding Name="NoAnnouncementsHowTo" Location="Resource(wss,noXinviewofY_DEFAULT)" />
+                            </ParameterBindings>
+                        </View>
+                        <View BaseViewID="2" Type="HTML" WebPartZoneID="Main" DisplayName="Accordion" DefaultView="FALSE" MobileView="FALSE" MobileDefaultView="FALSE" SetupPath="pages\viewpage.aspx" ImageUrl="/_layouts/15/images/generic.png?rev=23" Url="Accordion.aspx">
+                            <Toolbar Type="Standard" />
+                            <XslLink Default="TRUE">main.xsl</XslLink>
+                            <JSLink>~siteCollection/Style Library/demo/jslink/quick-links.js</JSLink>
+                            <RowLimit Paged="FALSE">100</RowLimit>
+                            <ViewFields>
+                                <FieldRef Name="Edit"></FieldRef>
+                                <FieldRef Name="QuickLinksText"></FieldRef>
+                                <FieldRef Name="QuickLinksUrl"></FieldRef>
+                                <FieldRef Name="QuickLinksCategory"></FieldRef>
+                                <FieldRef Name="QuickLinksOpenInNewWindow"></FieldRef>
+                                <FieldRef Name="QuickLinksSequence"></FieldRef>
+                            </ViewFields>
+                            <Query>
+                                <GroupBy>
+                                    <FieldRef Name="QuickLinksCategory"/>
+                                </GroupBy>
+                                <OrderBy>
+                                    <FieldRef Name="QuickLinksSequence"/>
+                                </OrderBy>
+                            </Query>
+                            <ParameterBindings>
+                                <ParameterBinding Name="NoAnnouncements" Location="Resource(wss,noXinviewofY_LIST)" />
+                                <ParameterBinding Name="NoAnnouncementsHowTo" Location="Resource(wss,noXinviewofY_DEFAULT)" />
+                            </ParameterBindings>
+                        </View>
+                    </pnp:Views>
+                    <!--<pnp:DataRows KeyColumn="QuickLinksSequence" UpdateBehavior="Skip">
+                        <pnp:DataRow>
+                            <pnp:DataValue FieldName="QuickLinksText">Concur</pnp:DataValue>
+                            <pnp:DataValue FieldName="QuickLinksSequence">1</pnp:DataValue>
+                        </pnp:DataRow>
+                        <pnp:DataRow>
+                            <pnp:DataValue FieldName="QuickLinksText">Staff Login</pnp:DataValue>
+                            <pnp:DataValue FieldName="QuickLinksSequence">2</pnp:DataValue>
+                        </pnp:DataRow>                        
+                    </pnp:DataRows>-->
+                </pnp:ListInstance>
+            </pnp:Lists>        
+            <pnp:Files>
+                <pnp:File Src="..\..\..\Style Library\demo\jslink\quick-links.js" Folder="Style Library/demo/jslink" Overwrite="true"/>
+            </pnp:Files>           
+        </pnp:ProvisioningTemplate>
+    </pnp:Templates>
+</pnp:Provisioning>

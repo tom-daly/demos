@@ -1,0 +1,145 @@
+#top-navigation {
+    display: none;
+    background-color: $white;
+    margin: 0;
+    width: 100%;
+    ul,
+    li {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    .dropdown-menu {
+        display: none;
+    }
+    ul.nav {
+        >li {
+            border-top: 1px solid $lightGrey;
+            &:first-child {
+                border-top: 0;
+            }
+            >.dropdown-toggle,
+            >a {
+                display: block;
+                width: 100%;
+                padding: 15px 20px;
+                cursor: pointer;
+                @include link($black, $black);
+            }
+            &.dropdown {
+                .fa-caret-down {
+                    margin-left: 10px;
+                    display: inline-block;
+                }
+            }
+            &.opened {
+                >.dropdown-toggle {
+                    background-color: $blue;
+                    color: $white;
+                }
+                .dropdown-menu {
+                    display: block;
+                    >li>a {
+                        display: block;
+                        width: 100%;
+                        padding: 15px 40px;
+                        @include link($black, $black);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include breakpoint(m) {
+    #top-navigation {
+        margin-top: 15px;
+        display: inline-block !important;
+        vertical-align: top;
+        ul.nav {
+            >li {
+                display: inline-block;
+                border-top: 0;
+                &.active>.dropdown-toggle,
+                &.active>a,
+                &.active>a:link,
+                &.active>a:visited,
+                &.active>a:hover {
+                    background-color: $blue !important;
+                    color: $white !important;
+                }
+                >.dropdown-toggle,
+                >a {
+                    padding: 10px 20px;
+                    @include Lato;
+                    font-size: 15px;
+                    color: $black;
+                    cursor: pointer;
+                    &:hover,
+                    &.active {
+                        background-color: $blue;
+                        color: $white;
+                        @include link($white, $white);
+                    }
+                }
+                &.opened {
+                    >.dropdown-toggle {
+                        background-color: $white;
+                        color: $black;
+                    }
+                    .dropdown-menu {
+                        display: none;
+                        >li>a {
+                            display: block;
+                            width: 100%;
+                            padding: 10px 20px;
+                            @include link($black, $black);
+                        }
+                    }
+                }
+            }
+            .dropdown {
+                position: relative;
+                cursor: pointer;
+                .dropdown-menu {
+                    min-width: 150px;
+                    display: none;
+                    position: absolute;
+                    z-index: 8888;
+                    text-align: left;
+                    border: 1px solid $blue;
+                    background-color: $white;
+                    top: 38px;
+                    left: 0;
+                    li {
+                        a {
+                            padding: 10px 20px;
+                            display: block;
+                            @include link($black, $white);
+                            white-space: nowrap;
+                        }
+                        border-top: 1px solidd $blue;
+                        &:first-child {
+                            border-top: 0;
+                        }
+                        &:hover {
+                            background-color: $blue;
+                            color: $white;
+                            >a {
+                                @include link($white, $white);
+                            }
+                        }
+                    }
+                }
+                &,
+                .dropdown-toggle {
+                    &:hover {
+                        .dropdown-menu {
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

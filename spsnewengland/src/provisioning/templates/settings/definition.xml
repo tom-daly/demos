@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<pnp:Provisioning 
+    xmlns:pnp="http://schemas.dev.office.com/PnP/2017/05/ProvisioningSchema" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.dev.office.com/PnP/2017/05/ProvisioningSchema https://raw.githubusercontent.com/OfficeDev/PnP-Provisioning-Schema/master/OfficeDevPnP.ProvisioningSchema/ProvisioningSchema-2017-05.xsd">
+    <pnp:Preferences Author="Thomas Daly" Version="1.0" Generator="BR Business Solutions">
+    </pnp:Preferences>
+    <pnp:Templates>
+        <pnp:ProvisioningTemplate ID="Settings" Version="1">
+            <pnp:PropertyBagEntries>
+                <pnp:PropertyBagEntry Key="seoincludecustommetatagpropertyname" Value="True" Overwrite="true"/>
+                <pnp:PropertyBagEntry Key="seocustommetatagpropertyname" Value="&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, maximum-scale=1&quot; /&gt;" Overwrite="true"/>
+            </pnp:PropertyBagEntries>
+            <pnp:CustomActions>
+                <pnp:SiteCustomActions>                
+                    <pnp:CustomAction Name="cssLoader" Location="ScriptLink" Sequence="0" ScriptSrc="/{siteCollection}/Style Library/demo/js/cssloader.js"/>
+                    <pnp:CustomAction Name="googleFonts" Location="ScriptLink" Sequence="1" ScriptBlock="cssLoader.loadStylesheet('https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Condensed:400+700|Alegreya+Sans+SC', true);"/>
+                    <pnp:CustomAction Name="fontAwesome" Location="ScriptLink" Sequence="1" ScriptBlock="cssLoader.loadStylesheet('{site}/Style Library/demo/vendor/font-awesome/css/font-awesome.min.css', true);"/>
+                    <pnp:CustomAction Name="styles" Location="ScriptLink" Sequence="2" ScriptBlock="cssLoader.loadStylesheet('{site}/Style Library/demo/css/styles.css', true);"/>
+                    <pnp:CustomAction Name="jQuery" Location="ScriptLink" Sequence="0" ScriptSrc="{site}/Style Library/demo/vendor/jQuery/jquery-3.2.1.min.js"/>
+                    <pnp:CustomAction Name="moment" Location="ScriptLink" Sequence="1" ScriptSrc="{site}/Style Library/demo/vendor/moment/moment.min.js"/>
+                    <pnp:CustomAction Name="resize" Location="ScriptLink" Sequence="1" ScriptSrc="{site}/Style Library/demo/vendor/resize/jquery.ba-resize.min.js"/>
+                    <pnp:CustomAction Name="stripZwsp" Location="ScriptLink" Sequence="1" ScriptSrc="{site}/Style Library/demo/vendor/stripZWSP/jQuery.stripZWSP-1.0.js"/>
+                    <pnp:CustomAction Name="common" Location="ScriptLink" Sequence="1" ScriptSrc="{site}/Style Library/demo/js/common.js"/>
+                    <pnp:CustomAction Name="topNavigation" Location="ScriptLink" Sequence="10" ScriptSrc="{site}/Style Library/demo/js/top-navigation.js"/>
+                    <pnp:CustomAction Name="footer" Location="ScriptLink" Sequence="10" ScriptSrc="{site}/Style Library/demo/js/footer.js"/>
+                    <pnp:CustomAction Name="events" Location="ScriptLink" Sequence="20" ScriptSrc="{site}/Style Library/demo/js/events.js"/>
+                    <pnp:CustomAction Name="main" Location="ScriptLink" Sequence="30" ScriptSrc="{site}/Style Library/demo/js/main.js"/>
+                </pnp:SiteCustomActions>
+            </pnp:CustomActions>
+        </pnp:ProvisioningTemplate>
+    </pnp:Templates>
+</pnp:Provisioning>
