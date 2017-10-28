@@ -3,7 +3,7 @@ demo.footer = function () {
 
     var config = {
         storageCacheKey: "demonetFooter",
-        useCache: true
+        useCache: false
     };
 
     var init = function () {
