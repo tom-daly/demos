@@ -1,0 +1,8 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "version": "1.3.2",
+    "libraryName": "spfx-office-ui-demo",
+    "libraryId": "0e219ccd-d749-4f5e-b7a5-9d50a44f65cc",
+    "environment": "spo"
+  }
+}

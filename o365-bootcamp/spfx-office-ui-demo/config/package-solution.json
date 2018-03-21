@@ -1,0 +1,11 @@
+{
+  "$schema": "https://dev.office.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "spfx-office-ui-demo-client-side-solution",
+    "id": "0e219ccd-d749-4f5e-b7a5-9d50a44f65cc",
+    "version": "1.0.0.0"
+  },
+  "paths": {
+    "zippedPackage": "solution/spfx-office-ui-demo.sppkg"
+  }
+}

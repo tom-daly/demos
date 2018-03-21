@@ -8,7 +8,7 @@ var coreOptions = require('./coreOptions.js');
 
 var paths = {
 	masterPages: ["./src/MasterPages/**/*.master"],
-	styleLibrary: ["./src/StyleLibrary/**/!(.scss)*"],
+	styleLibrary: ["./src/StyleLibrary/**/!(*.scss)*"],
 	pageLayouts: ["./src/PageLayouts/**/*.aspx"],
 	displayTemplates: ["./src/DisplayTemplates/**/*"],
 	publishingImages: ["./src/PublishingImages/**/*"],

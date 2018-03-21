@@ -1,4 +1,4 @@
 module.exports = {
-    username: "user",
-    password: "password"
+    username: "tdaly@bandrdev.onmicrosoft.com",
+    password: "WoodStock3#"
 };
