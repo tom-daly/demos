@@ -8,7 +8,7 @@ var coreOptions = require('./coreOptions.js');
 
 var paths = {
 	masterPages: ["./src/MasterPages/**/*.master"],
-	styleLibrary: ["./src/Style Library/**/!(.scss)*"],
+	styleLibrary: ["./src/StyleLibrary/**/!(.scss)*"],
 	pageLayouts: ["./src/PageLayouts/**/*.aspx"],
 	displayTemplates: ["./src/DisplayTemplates/**/*"],
 	publishingImages: ["./src/PublishingImages/**/*"],
@@ -23,7 +23,7 @@ var fileOptions = {
 	styleLibrary: {
 		folder: "Style Library", //folder inside SharePoint
 		glob: paths.styleLibrary, //local folder
-		base: "Style Library" //this remove the 'StyleLibrary' from the url
+		base: "StyleLibrary" //this remove the 'StyleLibrary' from the url
 	},
 	pageLayouts: {
 		folder: "_catalogs/masterpage", //folder inside SharePoint
@@ -52,29 +52,29 @@ var copyToSharePoint = function (fileOptions) {
 
 gulp.task("default", ["watch"]);
 
-gulp.task("deploy", ["masterpages", "pagelayouts", "displaytemplates", "stylelibrary", "publishingimages", "siteassets"]);
+gulp.task("deploy", ["masterPages", "pageLayouts", "displayTemplates", "styleLibrary", "publishingImages", "siteAssets"]);
 
-gulp.task("displaytemplates", function () {
+gulp.task("displayTemplates", function () {
 	return copyToSharePoint(fileOptions.displayTemplates);
 });
 
-gulp.task("stylelibrary", function () {
+gulp.task("styleLibrary", function () {
 	return copyToSharePoint(fileOptions.styleLibrary);
 });
 
-gulp.task("publishingimages", function () {
+gulp.task("publishingImages", function () {
 	return copyToSharePoint(fileOptions.publishingImages);
 });
 
-gulp.task("pagelayouts", function () {
+gulp.task("pageLayouts", function () {
 	return copyToSharePoint(fileOptions.pageLayouts);
 });
 
-gulp.task("masterpages", function () {
+gulp.task("masterPages", function () {
 	return copyToSharePoint(fileOptions.masterPages);
 });
 
-gulp.task("siteassets", function () {
+gulp.task("siteAssets", function () {
 	return copyToSharePoint(fileOptions.siteAssets);
 });
 
