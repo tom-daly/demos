@@ -8,7 +8,7 @@ var coreOptions = require('./coreOptions.js');
 
 var paths = {
 	masterPages: ["./src/MasterPages/**/*.master"],
-	styleLibrary: ["./src/Style Library/**/*"],
+	styleLibrary: ["./src/Style Library/**/!(.scss)*"],
 	pageLayouts: ["./src/PageLayouts/**/*.aspx"],
 	displayTemplates: ["./src/DisplayTemplates/**/*"],
 	publishingImages: ["./src/PublishingImages/**/*"],
@@ -76,12 +76,6 @@ gulp.task("masterpages", function () {
 
 gulp.task("siteassets", function () {
 	return copyToSharePoint(fileOptions.siteAssets);
-});
-
-gulp.task("run", function () {
-	return run(__dirname + "\\src\\provisioning\\apply.ps1", {
-		usePowerShell: true
-	}).exec();
 });
 
 gulp.task("sass", function () {
