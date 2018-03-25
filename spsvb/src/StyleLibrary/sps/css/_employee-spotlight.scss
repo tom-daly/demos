@@ -1,0 +1,114 @@
+.employee-spotlight-webpart {
+    background-color: $white;
+
+       @at-root .employee-spotlight-controls {
+            position: absolute;
+            top: 50%;
+            margin-top: -15px;
+            z-index: 3000;
+            left: 0;
+            width: 100%;
+
+            .pager-prev, .pager-next {
+                display: inline-block;
+                position: relative;
+                
+                > span {
+                    display: inline-block;
+                    height: 32px;
+                    width: 32px;
+                    background-repeat: no-repeat;
+                    background-position: 0 0; 
+                }
+            }
+
+            .pager-prev {
+                left: 20px;
+                float: left;
+
+                > span {
+                    background-image: url('../images/icons/chevron-left-32x32.png');
+                }
+            }
+
+            .pager-next {
+                right: 20px;
+                float: right;
+
+                > span {
+                    background-image: url('../images/icons/chevron-right-32x32.png');
+                }
+            }
+
+            .pager {
+                margin: 0;
+
+                > span {
+
+                    .orb {
+                        background-image: url('../images/circle.png');
+                        background-repeat: no-repeat;
+                        height: 16px;
+                        width: 16px;
+                        display: inline-block;
+                        margin: 0 5px;
+                    }
+
+                    &.cycle-pager-active {
+                        .orb {
+                            background-image: url('../images/oval.png');
+                        }
+                    }
+                }
+            }
+        }
+
+    .rotator-item {
+        width: 100%;
+
+        > div {
+            text-align: center;
+        }
+
+        .image-overlay-container {
+            position: relative;
+            width: 222px;
+            height: 219px;
+            margin: 0 auto;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+
+        .image-overlay {
+            background-image: url('../images/porthole.png');
+            background-repeat: no-repeat;
+            width: 222px;
+            height: 219px;
+            margin: 0 auto;
+            position: absolute;
+            top: 2px;
+        }
+
+        img {
+            width: 100%;
+            max-width: 170px;
+            margin: 38px auto 0 auto;
+            display: block;
+        }
+
+        .employee-name {
+            @include Roboto;
+            font-size: 18px;
+            color: $black;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .employee-job-title, .employee-location {
+            @include Roboto;
+            font-size: 16px;
+            color: $black;
+            margin-bottom: 5px;
+        }
+    }
+}

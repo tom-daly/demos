@@ -1,0 +1,13 @@
+img[src*='siteIcon'] {
+    display: block;
+    @include box-sizing(border-box);
+    background: url('../images/logo.png') no-repeat; /* Path to the site logo */
+    width: 263px; /* Width of new image */
+    height: 50px; /* Height of new image */
+    padding-left: 263px; /* Equal to width of new image */
+}
+
+.ms-siteicon-img, .ms-siteicon-a {
+    max-height: none;
+    max-width: none;
+}

@@ -1,0 +1,39 @@
+@mixin Yantramanav {
+    font-family: 'Yantramanav', sans-serif;
+}
+
+@mixin Roboto {
+    font-family: 'Roboto', sans-serif;
+}
+
+@mixin FontAwesome {
+    font-family: 'FontAwesome', sans-serif;
+}
+
+a, .ms-link, .ms-heroCommandLink:hover, .ms-heroCommandLink,
+.ms-pivotControl-surfacedOpt, .ms-pivotControl-overflowDot {
+    &, &:visited, &:link {
+        color: $blue;
+        text-decoration: none;
+    }
+    &:hover {
+        color: $lightBlue;
+    }
+}
+
+.ms-pivotControl-surfacedOpt-selected {
+     &, &:link, &:visited, &:hover {
+        color: $lightBlue;
+    }
+}
+
+body, .ms-core-defaultFont, #pageStatusBar, .ms-status-msg, .js-callout-body {
+    @include Roboto;
+}
+
+h3.ms-linksection-title {
+    font-weight: bold;
+    font-size: 1.25em;
+    margin-bottom: 5px;
+    color: $black;
+}

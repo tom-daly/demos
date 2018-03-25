@@ -1,0 +1,46 @@
+.announcements-items {
+    overflow: hidden;
+
+    .announcement-item {
+        width: 50%;
+        float: right;
+        clear: right;
+        border-top: 5px solid $red;
+        padding-top: 10px;
+        margin-top: 10px;
+        padding-left: 10px;
+        @include box-sizing(border-box);
+
+        .title {
+            @include Yantramanav;
+            color: $black;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .body {
+            display: none;
+            @include Roboto;
+            color: $textColor;
+            line-height: 19.5px;
+            font-size: 13px;
+        }
+    }
+
+    #team-announcement-0 {
+        float: left;
+        border-bottom: 0;
+        padding-right: 10px;
+        padding-left: 0;
+
+        &, + .announcement-item {
+            padding-top: 0;
+            margin-top: 0;
+            border-top: 0;
+        }
+
+        .body {
+            display: block;
+        }
+    }
+}

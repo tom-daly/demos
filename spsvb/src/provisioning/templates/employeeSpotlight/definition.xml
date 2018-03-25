@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<pnp:Provisioning xmlns:pnp="http://schemas.dev.office.com/PnP/2017/05/ProvisioningSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.dev.office.com/PnP/2017/05/ProvisioningSchema https://raw.githubusercontent.com/OfficeDev/PnP-Provisioning-Schema/master/OfficeDevPnP.ProvisioningSchema/ProvisioningSchema-2017-05.xsd">
+    <pnp:Preferences Author="Thomas Daly" Version="1.0" Generator="SPS"></pnp:Preferences>
+    <pnp:Templates>
+        <pnp:ProvisioningTemplate ID="EmployeeSpotlight" Version="1">
+            <pnp:SiteFields>
+                <Field ID="{04DCF26B-A039-42CF-BD5C-5B5D4DBE343D}" Name="EmployeeSpotlightImage" StaticName="EmployeeSpotlightImage" DisplayName="Image" Type="Image" Group="Employee Spotlight Site Columns" Required="FALSE" Sealed="FALSE" RichText="FALSE" />
+                <Field ID="{0CAADAB3-1D31-4BBC-8EE4-6638194AA997}" Name="EmployeeSpotlightUrl" StaticName="EmployeeSpotlightUrl" DisplayName="URL" Type="URL" Group="Employee Spotlight Site Columns" Required="FALSE" Hidden="FALSE" Sealed="FALSE" MaxLength="255" />
+                <Field ID="{8FBBF147-011F-4157-8682-4E3EB468B870}" Name="EmployeeSpotlightName" StaticName="EmployeeSpotlightName" DisplayName="Name" Type="Text" Group="Employee Spotlight Site Columns" Sealed="FALSE" Required="FALSE" Hidden="FALSE" />
+                <Field ID="{570507E6-3432-4415-9147-1EF348D24772}" Name="EmployeeSpotlightJobTitle" StaticName="EmployeeSpotlightJobTitle" DisplayName="Job Title" Type="Text" Group="Employee Spotlight Site Columns" Sealed="FALSE" Required="FALSE" Hidden="FALSE" />
+                <Field ID="{67E979DF-F493-402A-A45C-F07CD42B353E}" Name="EmployeeSpotlightLocation" StaticName="EmployeeSpotlightLocation" DisplayName="Location" Type="Text" Group="Employee Spotlight Site Columns" Sealed="FALSE" Required="FALSE" Hidden="FALSE" />
+                <Field ID="{C36A1942-C2F2-40BC-AE51-388635BA7418}" Name="EmployeeSpotlightSequence" StaticName="EmployeeSpotlightSequence" Group="Employee Spotlight Site Columns" DisplayName="Sequence" Type="Number" Required="FALSE" Min="0" Max="9999" Sealed="TRUE" />
+            </pnp:SiteFields>
+            <pnp:ContentTypes>
+                <pnp:ContentType ID="0x0100FEEC1BBA29B743308409B964EE932391" Name="Employee Spotlight Content Type" Group="Custom Content Types" Description="Employee Spotlight Content Type" Inherits="FALSE">
+                    <pnp:FieldRefs>
+                        <pnp:FieldRef ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" Required="false" Hidden="true"/>
+                        <pnp:FieldRef ID="{04DCF26B-A039-42CF-BD5C-5B5D4DBE343D}" Required="true"/>
+                        <pnp:FieldRef ID="{0CAADAB3-1D31-4BBC-8EE4-6638194AA997}"/>
+                        <pnp:FieldRef ID="{8FBBF147-011F-4157-8682-4E3EB468B870}"/>
+                        <pnp:FieldRef ID="{570507E6-3432-4415-9147-1EF348D24772}"/>
+                        <pnp:FieldRef ID="{67E979DF-F493-402A-A45C-F07CD42B353E}"/>
+                        <pnp:FieldRef ID="{C36A1942-C2F2-40BC-AE51-388635BA7418}"/>
+                    </pnp:FieldRefs>
+                </pnp:ContentType>
+            </pnp:ContentTypes>
+            <pnp:Lists>
+                <pnp:ListInstance Title="Employee Spotlight" Description="" OnQuickLaunch="true" EnableFolderCreation="false" TemplateType="100" Url="Lists/EmployeeSpotlightList" RemoveExistingContentTypes="true">
+                    <pnp:ContentTypeBindings>
+                        <pnp:ContentTypeBinding ContentTypeID="0x0100FEEC1BBA29B743308409B964EE932391" Default="true" />
+                    </pnp:ContentTypeBindings>
+                    <pnp:Views RemoveExistingViews="true">
+                        <View BaseViewID="1" Type="HTML" WebPartZoneID="Main" DisplayName="$Resources:core,objectiv_schema_mwsidcamlidC24;" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" SetupPath="pages\viewpage.aspx" ImageUrl="/_layouts/15/images/generic.png?rev=23" Url="AllItems.aspx">
+                            <Toolbar Type="Standard" />
+                            <XslLink Default="TRUE">main.xsl</XslLink>
+                            <JSLink>clienttemplates.js</JSLink>
+                            <RowLimit Paged="TRUE">30</RowLimit>
+                            <ViewFields>
+                                <FieldRef Name="Edit"></FieldRef>
+                                <FieldRef Name="EmployeeSpotlightImage" />
+                                <FieldRef Name="EmployeeSpotlightUrl" />
+                                <FieldRef Name="EmployeeSpotlightName" />
+                                <FieldRef Name="EmployeeSpotlightJobTitle" />
+                                <FieldRef Name="EmployeeSpotlightLocation" />
+                                <FieldRef Name="EmployeeSpotlightSequence" />
+                            </ViewFields>
+                            <Query>
+                                <OrderBy>
+                                    <FieldRef Name="EmployeeSpotlightSequence"></FieldRef>
+                                </OrderBy>
+                            </Query>
+                            <ParameterBindings>
+                                <ParameterBinding Name="NoAnnouncements" Location="Resource(wss,noXinviewofY_LIST)" />
+                                <ParameterBinding Name="NoAnnouncementsHowTo" Location="Resource(wss,noXinviewofY_DEFAULT)" />
+                            </ParameterBindings>
+                        </View>
+                        <View BaseViewID="2" Type="HTML" WebPartZoneID="Main" DisplayName="Slider" DefaultView="FALSE" MobileView="FALSE" MobileDefaultView="FALSE" SetupPath="pages\viewpage.aspx" ImageUrl="/_layouts/15/images/generic.png?rev=23" Url="Slider.aspx">
+                            <Toolbar Type="Standard" />
+                            <XslLink Default="TRUE">main.xsl</XslLink>
+                            <JSLink>~siteCollection/Style Library/sps/jslink/employee-spotlight.js</JSLink>
+                            <RowLimit Paged="FALSE">100</RowLimit>
+                            <ViewFields>
+                                <FieldRef Name="Edit"></FieldRef>
+                                <FieldRef Name="EmployeeSpotlightImage" />
+                                <FieldRef Name="EmployeeSpotlightUrl" />
+                                <FieldRef Name="EmployeeSpotlightName" />
+                                <FieldRef Name="EmployeeSpotlightJobTitle" />
+                                <FieldRef Name="EmployeeSpotlightLocation" />
+                                <FieldRef Name="EmployeeSpotlightSequence" />
+                            </ViewFields>
+                            <Query>
+                                <OrderBy>
+                                    <FieldRef Name="EmployeeSpotlightSequence"></FieldRef>
+                                </OrderBy>
+                            </Query>
+                            <ParameterBindings>
+                                <ParameterBinding Name="NoAnnouncements" Location="Resource(wss,noXinviewofY_LIST)" />
+                                <ParameterBinding Name="NoAnnouncementsHowTo" Location="Resource(wss,noXinviewofY_DEFAULT)" />
+                            </ParameterBindings>
+                        </View>
+                    </pnp:Views>
+                </pnp:ListInstance>
+            </pnp:Lists>
+        </pnp:ProvisioningTemplate>
+    </pnp:Templates>
+</pnp:Provisioning>

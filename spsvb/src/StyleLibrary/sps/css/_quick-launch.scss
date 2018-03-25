@@ -1,0 +1,73 @@
+#sideNavBox {
+    background-color: $quickLaunchBg;
+    border-top: 5px solid $quickLaunchAlt;
+    padding: 5px 0;
+
+	//META NAVIGATION
+    .ms-tv-box {
+        margin: 0;
+        padding: 10px 0;
+        background-color: $white;
+    }
+	
+    #DatePickerDiv {
+        margin-top: -5px;
+    }
+
+    .ms-acal-apanel-outer {
+        margin-bottom: 5px;
+    }
+
+    #DatePickerDiv, .ms-acal-apanel-outer {
+        background-color: $white;
+    }
+
+    .ms-core-sideNavBox-removeLeftMargin {
+        margin-left: 0;
+    }
+
+    .ms-core-listMenu-verticalBox {
+
+        .ms-navedit-editArea {
+            display: none;
+        }
+
+        .ms-core-listMenu-item {
+            &, &:link, &:visited, &:hover {
+                color: $white;
+                padding: 5px 15px 5px 15px;
+                margin-top: 5px;
+                @include Roboto;
+                font-size: 14px;
+            }
+
+            &:hover, &.selected {
+                background-color: $quickLaunchAlt;
+                font-weight: normal;
+            }
+
+            .menu-item-text {
+                display: block;
+                //border-top: 1px solid $quickLaunchAlt;
+            }
+        }
+
+        .ms-core-listMenu-root {
+
+            .ms-core-listMenu-selected {
+                background-color: $quickLaunchAlt;
+                font-weight: normal;
+            }
+
+            li.ms-storefront-divider {
+                margin: 0;
+            }
+        }
+
+        .ms-core-listMenu-root > li.static:first-child {
+            .menu-item-text {
+                border-top: 0;
+            }
+        }
+    }
+}

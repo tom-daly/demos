@@ -1,0 +1,80 @@
+#weather {
+    position: relative;
+    top: -5px;
+
+    img.loading {
+        position: relative;
+        top: 15px;
+    }
+
+    @for $i from 1 through 47 {
+        .icon-#{$i} {
+            background-image: url('../images/weather-icons/#{$i}.png');
+            background-repeat: no-repeat;
+            background-position: 0 0;
+            height: 32px;
+            width: 32px;
+        }
+    }
+
+    .icon-3200 {
+        background-image: url('../images/weather-icons/3200.png');
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        height: 32px;
+        width: 32px;
+    }
+
+    .alt-temp {
+        display: none;
+    }
+
+    #weather-error {
+        max-width: 300px;
+    }
+
+    #weather-data {
+        white-space: nowrap;
+
+        .weather-temp {
+            display: inline;
+            cursor: pointer;
+        }
+
+        .weather-reading {
+            position: relative;
+
+            .weather-icon {
+                position: absolute;
+                right: 0;
+                top: 5px;
+            }
+        }
+
+        .weather-location {
+            @include Roboto;
+            font-size: 15px;
+            color: $black;
+        }
+
+        .temp {
+            font-size: 30px;
+            color: $black;
+            position: relative;
+            margin-right: 60px;
+
+            .units {
+                font-size: 12px;
+                position: absolute;
+                top: 10px;
+                text-transform: uppercase;
+
+                .divider {
+                    padding: 0 2px;
+                    position: relative;
+                    top: -1px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,17 @@
+#corporate-directory {
+    #results {
+        #search-results {
+            a[id$='-button'] {
+                background-color: $red !important;
+                border-color: $red !important;
+
+                &:hover {
+                    border-color: $blue !important;
+                    &, i {
+                        background-color: $blue !important;
+                    }
+                }
+            }
+        }
+    }
+}

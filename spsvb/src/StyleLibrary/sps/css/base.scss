@@ -1,0 +1,26 @@
+@import 'colors';
+@import 'fonts';
+@import 'utility';
+
+@import 'suite-bar';
+@import 'title-bar';
+@import 'quick-launch';
+@import 'footer';
+@import 'webparts';
+@import 'corp-dir';
+@import 'pages';
+@import 'modal';
+
+input[type=button],
+input[type=reset],
+input[type=submit],
+button {
+    background-color: $buttonColor;
+    border-color: $buttonColor;
+    color: $white;
+
+    &:hover {
+        background-color: $buttonHoverColor;
+        border-color: $buttonHoverColor;
+    }
+}

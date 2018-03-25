@@ -1,0 +1,63 @@
+#DeltaTopNavigation {
+
+    .ms-navedit-editArea {
+        display: none;
+    }
+
+    .ms-core-listMenu-horizontalBox {
+        margin-top: 2px;
+        margin-left: 10px;
+    }
+
+    ul.root {
+        > li.static {
+            > a.ms-core-listMenu-item {
+                //first node
+                //display: none;
+            }
+        }
+
+        li.static {
+            .ms-core-listMenu-item {
+                //top level nodes
+                color: $black;
+                padding: 10px 15px;
+                background-color: transparent;
+                @include Roboto;
+                font-size: 15px;
+
+                &:hover {
+                    color: $white;
+                    background-color: $blue;
+                }
+            }
+
+            &.selected {
+                > .ms-core-listMenu-item {
+                    color: $white;
+                    background-color: $blue;
+                }
+            }
+        }
+
+        ul.dynamic {
+            margin-left: -5px;
+            padding: 0;
+
+            li.dynamic {
+                .ms-core-listMenu-item {
+                    color: $black;
+                    padding: 10px;
+                    background-color: transparent;
+                    @include Roboto;
+                    font-size: 12px;
+
+                    &:hover {
+                        color: $white;
+                        background-color: $blue;
+                    }
+                }
+            }
+        }
+    }
+}

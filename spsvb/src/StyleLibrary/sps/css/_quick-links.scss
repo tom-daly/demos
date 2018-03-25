@@ -1,0 +1,62 @@
+.linksAccordionContainer {
+    background-color: $white;
+
+    div.grouping {
+        font-size: 18px;
+        @include Roboto;
+        font-weight: bold;
+        margin-bottom: 10px;
+        cursor: pointer;
+        position: relative;
+
+        span {
+            display: block;
+            width: 16px;
+            height: 16px;
+            background-image: url('../images/icons/down-16x16.png');
+            background-repeat: no-repeat;
+            position: absolute;
+            top: 4px;
+            right: 0;
+        }
+
+        &.active {
+            cursor: default;
+
+            span {
+                background-image: url('../images/icons/up-16x16.png');
+            }
+        }
+    }
+
+    .item + .grouping {
+        margin-top: 10px;
+    }
+
+    .item {
+        display: none;
+        margin-top: 5px;
+
+        a {
+            background-image: url('../images/icons/wave.png');
+            background-position: 5px 4px;
+            background-repeat: no-repeat;
+            padding-left: 25px;
+
+            &, &:link, &:visited {
+                @include Roboto;
+                font-size: 14px;
+                color: #666;
+            }
+
+            &:hover {
+                color: $lightBlue;
+                text-decoration: none;
+            }
+        }
+    }
+
+    .grouping + .item {
+        margin-top: 0;
+    }
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<pnp:Provisioning 
+    xmlns:pnp="http://schemas.dev.office.com/PnP/2017/05/ProvisioningSchema" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.dev.office.com/PnP/2017/05/ProvisioningSchema https://raw.githubusercontent.com/OfficeDev/PnP-Provisioning-Schema/master/OfficeDevPnP.ProvisioningSchema/ProvisioningSchema-2017-05.xsd">
+    <pnp:Preferences Author="Thomas Daly" Version="1.0" Generator="">
+    </pnp:Preferences>
+    <pnp:Templates>
+        <pnp:ProvisioningTemplate ID="Assets" Version="2">
+            <pnp:Files>
+                <pnp:Directory Src="..\..\..\StyleLibrary" Folder="Style Library" Overwrite="true" Recursive="true" ExcludedExtensions="*.scss" Level="Published"/>
+            </pnp:Files>
+        </pnp:ProvisioningTemplate>
+    </pnp:Templates>
+</pnp:Provisioning>

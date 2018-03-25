@@ -1,0 +1,40 @@
+#s4-bodyContainer {
+    padding: 0;
+}
+
+#contentRow {
+    background-image: url('../images/header-bg-dropshadow.png');
+    background-repeat: repeat-x;
+    background-position: top left;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: $grey;
+}
+
+#contentBox {
+    background-color: $white;
+    padding: 20px;
+}
+
+.left-column-area {
+    padding-right: $globalPadding/2;
+}
+
+.right-column-area {
+    padding-left: $globalPadding/2;
+}
+
+div.article, div.welcome {
+    padding: 0;
+}
+
+.article-content, .welcome-content {
+    margin: 0;
+}
+
+.page-title {
+    @include Roboto;
+    color: $black;
+    font-size: 30px;
+    margin-bottom: 10px;
+}

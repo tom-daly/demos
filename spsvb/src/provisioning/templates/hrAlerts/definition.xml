@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<pnp:Provisioning xmlns:pnp="http://schemas.dev.office.com/PnP/2017/05/ProvisioningSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.dev.office.com/PnP/2017/05/ProvisioningSchema https://raw.githubusercontent.com/OfficeDev/PnP-Provisioning-Schema/master/OfficeDevPnP.ProvisioningSchema/ProvisioningSchema-2017-05.xsd">
+    <pnp:Preferences Author="Thomas Daly" Version="1.0" Generator="SPS"></pnp:Preferences>
+    <pnp:Templates>
+        <pnp:ProvisioningTemplate ID="HRAlerts" Version="1">
+            <pnp:SiteFields>
+                <Field ID="{020E671F-FA79-49EA-B7BC-E3736CC79FE5}" Name="HrAlertsBody" StaticName="HrAlertsBody" DisplayName="Body" Type="Note" Group="HR Alerts Site Columns" Sealed="FALSE" Overwrite="TRUE" Required="FALSE" Hidden="FALSE" RichText="TRUE" RichTextMode="FullHtml" NumLines="6" />
+                <Field ID="{5E6107C6-FC95-4B03-A8F8-08700C5BDA01}" Name="HrAlertsDate" StaticName="HrAlertsDate" DisplayName="Date" Type="DateTime" Group="HR Alerts Site Columns" Sealed="FALSE" Overwrite="TRUE" Required="FALSE" Hidden="FALSE" Format="DateOnly" />
+                <Field ID="{495F19A8-8367-45A8-B54B-7E5646D13ECF}" Name="HrAlertsExpirationDate" StaticName="HrAlertsExpirationDate" DisplayName="Expires" Type="DateTime" Group="HR Alerts Site Columns" Sealed="FALSE" Overwrite="TRUE" Required="FALSE" Hidden="FALSE" Format="DateOnly" />
+            </pnp:SiteFields>
+            <pnp:ContentTypes>
+                <pnp:ContentType ID="0x0100F44AA0D9B7854370B05B635C1F20F488" Name="HR Alerts Content Type" Group="HR Alerts Content Type" Description="HR Alerts Content Type" Inherits="TRUE">
+                    <pnp:FieldRefs>
+                        <pnp:FieldRef ID="{020E671F-FA79-49EA-B7BC-E3736CC79FE5}"/>
+                        <pnp:FieldRef ID="{5E6107C6-FC95-4B03-A8F8-08700C5BDA01}"/>
+                        <pnp:FieldRef ID="{495F19A8-8367-45A8-B54B-7E5646D13ECF}"/>
+                    </pnp:FieldRefs>
+                </pnp:ContentType>
+            </pnp:ContentTypes>
+            <pnp:Lists>
+                <pnp:ListInstance Title="HR Alerts" Description="" OnQuickLaunch="true" EnableFolderCreation="false" TemplateType="100" Url="Lists/HrAlertsList" RemoveExistingContentTypes="true">
+                    <pnp:ContentTypeBindings>
+                        <pnp:ContentTypeBinding ContentTypeID="0x0100F44AA0D9B7854370B05B635C1F20F488" Default="true" />
+                    </pnp:ContentTypeBindings>
+                    <pnp:Views RemoveExistingViews="true">
+                        <View BaseViewID="1" Type="HTML" WebPartZoneID="Main" DisplayName="$Resources:core,objectiv_schema_mwsidcamlidC24;" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" SetupPath="pages\viewpage.aspx" ImageUrl="/_layouts/15/images/generic.png?rev=23" Url="AllItems.aspx">
+                            <Toolbar Type="Standard" />
+                            <Query>
+                                <Where>
+                                    <Or>
+                                        <IsNull>
+                                            <FieldRef Name="HrAlertsExpirationDate" />
+                                        </IsNull>
+                                        <Geq>
+                                            <FieldRef Name="HrAlertsExpirationDate" />
+                                            <Value Type="DateTime">
+                                                <Today />
+                                            </Value>
+                                        </Geq>
+                                    </Or>
+                                </Where>
+                                <OrderBy>
+                                    <FieldRef Name="HrAlertsDate" Ascending="FALSE"></FieldRef>
+                                </OrderBy>
+                            </Query>
+                            <XslLink Default="TRUE">main.xsl</XslLink>
+                            <JSLink>clienttemplates.js</JSLink>
+                            <RowLimit Paged="TRUE">30</RowLimit>
+                            <ViewFields>
+                                <FieldRef Name="Edit"></FieldRef>
+                                <FieldRef Name="Title"></FieldRef>
+                                <FieldRef Name="HrAlertsBody" />
+                                <FieldRef Name="HrAlertsDate" />
+                                <FieldRef Name="HrAlertsExpirationDate" />
+                            </ViewFields>
+                            <ParameterBindings>
+                                <ParameterBinding Name="NoAnnouncements" Location="Resource(wss,noXinviewofY_LIST)" />
+                                <ParameterBinding Name="NoAnnouncementsHowTo" Location="Resource(wss,noXinviewofY_DEFAULT)" />
+                            </ParameterBindings>
+                        </View>
+                        <View BaseViewID="2" Type="HTML" WebPartZoneID="Main" DisplayName="Latest Alerts" DefaultView="FALSE" MobileView="FALSE" MobileDefaultView="FALSE" SetupPath="pages\viewpage.aspx" ImageUrl="/_layouts/15/images/generic.png?rev=23" Url="LatestAlerts.aspx">
+                            <Toolbar Type="Standard" />
+                            <XslLink Default="TRUE">main.xsl</XslLink>
+                            <JSLink>~siteCollection/Style Library/sps/jslink/hr-alert.js</JSLink>
+                            <RowLimit Paged="FALSE">1</RowLimit>
+                            <ViewFields>
+                                <FieldRef Name="Edit"></FieldRef>
+                                <FieldRef Name="Title"></FieldRef>
+                                <FieldRef Name="HrAlertsBody" />
+                                <FieldRef Name="HrAlertsDate" />
+                                <FieldRef Name="HrAlertsExpirationDate" />
+                            </ViewFields>
+                            <Query>
+                                <OrderBy>
+                                    <FieldRef Name="HrAlertsDate" Ascending="FALSE"></FieldRef>
+                                </OrderBy>
+                            </Query>
+                            <ParameterBindings>
+                                <ParameterBinding Name="NoAnnouncements" Location="Resource(wss,noXinviewofY_LIST)" />
+                                <ParameterBinding Name="NoAnnouncementsHowTo" Location="Resource(wss,noXinviewofY_DEFAULT)" />
+                            </ParameterBindings>
+                        </View>
+                    </pnp:Views>
+                </pnp:ListInstance>
+            </pnp:Lists>
+        </pnp:ProvisioningTemplate>
+    </pnp:Templates>
+</pnp:Provisioning>

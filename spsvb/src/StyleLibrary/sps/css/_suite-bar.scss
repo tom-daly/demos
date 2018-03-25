@@ -1,0 +1,19 @@
+#suiteBarTop {
+    .o365cs-base .o365cs-topnavBGColor, .o365cs-base .o365cs-topnavBGColor-2, .o365cs-base.o365cs-topnavBGColor, .o365cs-base.o365cs-topnavBGColor-2 {
+        background-color: $black;
+    }
+
+    .ms-bgc-tp {
+        background-color: $blue;
+
+        &:hover {
+            background-color: $lightBlue;
+        }
+    }
+
+    .ms-bgc-tdr-h {
+        &:hover {
+            background-color: $lightBlue;
+        }
+    }
+}

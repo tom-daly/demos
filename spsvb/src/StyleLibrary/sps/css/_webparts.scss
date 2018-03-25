@@ -1,0 +1,27 @@
+@import 'image-rotator';
+@import 'employee-spotlight';
+@import 'quick-links';
+@import 'hr-alerts';
+@import 'team-announcements';
+
+//web part headers
+.ms-webpart-chrome-title {
+    background-color: $blue;
+    margin-bottom: 5px;
+    
+    + .ms-wpContentDivSpace {
+        padding: 5px 5px 5px 5px;
+    }
+
+    .ms-webpart-titleText {
+        padding: 5px 10px;
+
+        a {
+            &, &:link, &:hover, &:visited {
+                @include Roboto;
+                color: $white;
+                text-decoration: none;
+            }
+        }
+    }
+}

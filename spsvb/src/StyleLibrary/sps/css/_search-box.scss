@@ -1,0 +1,65 @@
+.ms-mpSearchBox {
+    width: auto;
+    white-space: nowrap;
+
+    #searchInputBox {
+        margin-bottom: 0;
+    }
+}
+
+#DeltaPlaceHolderSearchArea {
+    margin-top: 5px;
+}
+
+#SearchBox {
+
+    .ms-qSuggest-container {
+        margin-left: -14px;
+        margin-top: 11px;
+    }
+
+    .ms-srch-sb {
+        margin-left: 20px;
+        background-color: $grey;
+        border: 0;
+        padding: 10px 15px;
+
+        > input {
+            width: auto;
+            @include Roboto;
+            font-size: 12px;
+            font-style: italic;
+            color: #666;
+        }
+    }
+
+    .ms-srch-sb-searchLink,
+    .ms-srch-sb-navLink,
+    .ms-srch-sb-navLink-menuOpen {
+        &, &:active, &:hover {
+            background-color: transparent;
+        }
+    }
+
+    .ms-srch-sb-searchLink {
+        margin-left: 5px;
+
+        &:hover {
+            text-decoration: none;
+        }
+
+        &:after {
+            @include FontAwesome;
+            content: '\f002';
+            color: $lightBlue;
+            font-size: 18px;
+            position: relative;
+            top: 2px;
+            left: 2px;
+        }
+
+        > #searchImg {
+            display: none;
+        }
+    }
+}

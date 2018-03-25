@@ -1,0 +1,27 @@
+.hr-alert {
+    background-color: $white;
+
+    .title {
+        font-size: 26px;
+        font-weight: bold;
+        color: $black;
+        @include Yantramanav;
+        margin-bottom: 20px;
+    }
+
+    .body {
+        font-size: 16px; 
+        color: #666;
+        @include Roboto;
+        margin-bottom: 20px;
+        line-height: 1.5em;
+    }
+
+    .date {
+        font-style: italic;
+        text-align: right;
+        color: $black;
+        @include Roboto;
+        font-size: 16px;
+    }
+}

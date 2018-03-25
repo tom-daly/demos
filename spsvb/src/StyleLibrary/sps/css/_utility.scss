@@ -1,0 +1,276 @@
+$globalPadding: 15px;
+
+@mixin clearfix {
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+@function calculateRem($size) {
+    $remSize: $size / 16px;
+    @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+    font-size: $size;
+    font-size: calculateRem($size);
+}
+
+@mixin opacity($opacity) {
+    opacity: $opacity;
+    $opacity-ie: $opacity * 100;
+    filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+@mixin overlay {
+    &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, .25);
+        -webkit-transition: opacity .3s;
+        -moz-transition: opacity .3s;
+        -o-transition: opacity .3s;
+        transition: opacity .3s;
+        opacity: 1;
+        z-index: 20;
+    }
+}
+
+@mixin box-sizing($box-model) {
+    -webkit-box-sizing: $box-model; // Safari <= 5
+    -moz-box-sizing: $box-model; // Firefox <= 19
+    box-sizing: $box-model;
+}
+
+@mixin border-radius($radius) {
+    border-radius: $radius;
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    -o-border-radius: $radius;
+}
+
+@mixin circle($size, $color, $display) {
+    display: $display;
+    line-height: $size;
+    width: $size;
+    height: $size;
+    background: $color;
+    -webkit-border-radius: $size/2;
+    -moz-border-radius: $size/2;
+    border-radius: $size/2;
+}
+
+@mixin clearfix() {
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+
+    &:after {
+        clear: both;
+    }
+}
+
+@mixin button {
+    //define button style
+}
+
+
+.button, .btn {
+    @include button;
+}
+
+.spinning {
+    -moz-animation: spin 1s infinite linear;
+    -o-animation: spin 1s infinite linear;
+    animation: spin 1s infinite linear;
+    -webkit-animation: spin2 1s infinite linear;
+}
+
+@keyframes spin {
+    from {
+        -moz-transform: scale(1) rotate(0deg);
+        -ms-transform: scale(1) rotate(0deg);
+        -o-transform: scale(1) rotate(0deg);
+        -webkit-transform: scale(1) rotate(0deg);
+        transform: scale(1) rotate(0deg);
+    }
+
+    to {
+        -moz-transform: scale(1) rotate(360deg);
+        -ms-transform: scale(1) rotate(360deg);
+        -o-transform: scale(1) rotate(360deg);
+        -webkit-transform: scale(1) rotate(360deg);
+        transform: scale(1) rotate(360deg);
+    }
+}
+
+@-webkit-keyframes spin2 {
+    from {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    to {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+.hide, .init-hide {
+    display: none;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.no-bullets {
+    list-style: none;
+}
+
+.bullets-inside {
+    list-style: inside;
+}
+
+.list-bare {
+    margin: 0;
+    padding: 0;
+    @extend .no-bullets;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-just {
+    text-align: justify;
+}
+
+.align-top {
+    vertical-align: top;
+}
+
+.align-bottom {
+    vertical-align: bottom;
+}
+
+.align-middle {
+    vertical-align: middle;
+}
+
+.align-baseline {
+    vertical-align: baseline;
+}
+
+.fixed {
+    position: fixed;
+}
+
+.relative {
+    position: relative;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.width-auto {
+    width: auto;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.table {
+    display: table;
+}
+
+.table-row {
+    display: table-row;
+}
+
+.table-cell {
+    display: table-cell;
+}
+
+.group:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+@for $m from 0 through 10 {
+    .m#{($m*10)} {
+        margin: #{($m*10)}px;
+    }
+    .mt#{($m*10)} {
+        margin-top: #{($m*10)}px;
+    }
+    .mr#{($m*10)} {
+        margin-right: #{($m*10)}px;
+    }
+    .mb#{($m*10)} {
+        margin-bottom: #{($m*10)}px;
+    }
+    .ml#{($m*10)} {
+        margin-left: #{($m*10)}px;
+    }
+}
+
+@for $p from 0 through 10 {
+    .p#{($p*10)} {
+        padding: #{($p*10)}px;
+    }
+    .pt#{($p*10)} {
+        padding-top: #{($p*10)}px;
+    }
+    .pr#{($p*10)} {
+        padding-right: #{($p*10)}px;
+    }
+    .pb#{($p*10)} {
+        padding-bottom: #{($p*10)}px;
+    }
+    .pl#{($p*10)} {
+        padding-left: #{($p*10)}px;
+    }
+}

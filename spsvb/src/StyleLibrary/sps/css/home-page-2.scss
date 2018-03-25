@@ -1,0 +1,72 @@
+@import 'no-left-nav';
+@import 'colors';
+
+#contentBox {
+  margin: 0;
+  padding: 0;
+}
+
+#contentRow {
+  padding-bottom: 0;
+  padding-top: 0;
+}
+
+#DeltaPageStatusBar {
+  margin: 0 20px;
+}
+
+.page-title {
+  display: none !important;
+}
+
+div.home-page-layout {
+  padding: 0;
+  background-color: $grey;
+
+  .ms-webpartzone-cell {
+    margin: 0;
+    border-spacing: 0;
+  }
+
+  .main-table {
+    .table-cell {
+
+      &.left {
+        width: 66.66%;
+
+        > div.spacer {
+          padding-right: 10px !important;
+        }
+      }
+
+      &.right {
+        width: 33.33%;
+
+        > div.spacer {
+          padding-left: 10px !important;
+        }
+
+        .ms-webpartzone-cell {
+          padding: 20px;
+        }
+      }
+
+      > div.spacer {
+        position: relative;
+        padding: 24px;
+        background-color: $grey;
+      }
+
+      .ms-webpart-zone {
+        .ms-webpartzone-cell {
+          margin-top: 20px;
+          background-color: $white;
+
+          &:first-child {
+            margin-top: 0;
+          }
+        }
+      }
+    }
+  }
+}
