@@ -14,12 +14,13 @@ Connect-PnPOnline -url $configObject.siteUrl -Credentials $credentials
 
 ## Example 1
 ## Generate the template of 
-## https://bandrdev.sharepoint.com/sites/PnPTemplateC
+## https://bandrdev.sharepoint.com/sites/PnPTemplateA
 Get-PnPProvisioningTemplate -Out .\example1.xml
 
 ## Connect to the Target Site
-## https://bandrdev.sharepoint.com/sites/PnPTargetC
-Connect-PnPOnline -url "https://bandrdev.sharepoint.com/sites/PnPTargetC" -Credentials $credentials
+## https://bandrdev.sharepoint.com/sites/PnPTargetB
+# Remove-SPOSite https://bandrdev.sharepoint.com/sites/PnPTargetA
+Connect-PnPOnline -url "https://bandrdev.sharepoint.com/sites/PnPTargetA" -Credentials $credentials
 
 ## Apply template to the new site
 Apply-PnPProvisioningTemplate .\example1.xml
