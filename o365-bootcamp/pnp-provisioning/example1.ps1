@@ -13,10 +13,7 @@ Get-PnPProvisioningTemplate -Out .\example1.xml
 
 ## Connect to the Target Site
 ## https://bandrdev.sharepoint.com/sites/PnPTargetA
-
 Connect-PnPOnline -url "https://bandrdev.sharepoint.com/sites/PnPTargetA"
 
 ## Apply template to the new site
 Apply-PnPProvisioningTemplate .\example1.xml
-
-## Style Library fails in the xml file - REMEMBER
