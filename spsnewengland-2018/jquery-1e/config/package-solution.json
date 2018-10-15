@@ -1,0 +1,12 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+    "solution": {
+        "name": "jquery-1-e-client-side-solution",
+        "id": "fec7a8e6-1016-42ab-a081-6a0c02e8147f",
+        "version": "1.0.0.2",
+        "includeClientSideAssets": true
+    },
+    "paths": {
+        "zippedPackage": "solution/jquery-1-e.sppkg"
+    }
+}
