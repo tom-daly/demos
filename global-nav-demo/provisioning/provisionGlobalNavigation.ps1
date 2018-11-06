@@ -18,7 +18,7 @@ Write-Host "-------------------------------------------------" -ForegroundColor 
 
 Write-Host "Global Navigation" -ForegroundColor Green
 Apply-PnPProvisioningTemplate ".\GlobalNav\definition.xml"
-
+return
 Write-Host "Adding Lookup Field" -ForegroundColor Green
 $globalNavList = Get-PnPList -Identity "Lists/GlobalNavList"
 
