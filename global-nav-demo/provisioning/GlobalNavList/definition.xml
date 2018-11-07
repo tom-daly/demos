@@ -19,7 +19,7 @@
                     </pnp:FieldRefs>
                 </pnp:ContentType>
             </pnp:ContentTypes>
-           <!--<pnp:Lists>
+           <pnp:Lists>
                 <pnp:ListInstance Title="Global Nav List" Description="" OnQuickLaunch="true" EnableFolderCreation="false" TemplateType="100" Url="Lists/GlobalNavList" RemoveExistingContentTypes="true" EnableAttachments="false" >
                     <pnp:ContentTypeBindings>
                         <pnp:ContentTypeBinding ContentTypeID="0x010027D49D07CA2F4E2FA34B9CFB1645D460" Default="true"/>
@@ -48,7 +48,7 @@
                         </View>
                     </pnp:Views>
                 </pnp:ListInstance>
-            </pnp:Lists>-->
+            </pnp:Lists>
         </pnp:ProvisioningTemplate>
     </pnp:Templates>
 </pnp:Provisioning>

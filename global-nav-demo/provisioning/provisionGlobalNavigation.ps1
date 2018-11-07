@@ -17,8 +17,8 @@ Write-Host "Provisioning Site Columns, Content Types, & Lists" -ForegroundColor 
 Write-Host "-------------------------------------------------" -ForegroundColor Yellow
 
 Write-Host "Global Navigation" -ForegroundColor Green
-Apply-PnPProvisioningTemplate ".\GlobalNav\definition.xml"
-return
+Apply-PnPProvisioningTemplate ".\GlobalNavList\definition.xml"
+
 Write-Host "Adding Lookup Field" -ForegroundColor Green
 $globalNavList = Get-PnPList -Identity "Lists/GlobalNavList"
 
