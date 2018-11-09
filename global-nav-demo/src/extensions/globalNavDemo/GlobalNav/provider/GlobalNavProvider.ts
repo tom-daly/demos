@@ -4,13 +4,13 @@ import pnp from "sp-pnp-js";
 
 export default class GlobalNavProvider {
   constructor() {
-    pnp.setup({
+/*     pnp.setup({
       sp: {
         baseUrl: window.location.origin
           ? window.location.origin + "/"
           : window.location.protocol + "/" + window.location.host + "/"
       }
-    });
+    }); */
   }
 
   public getGlobalNavigation(): Promise<IGlobalNavItem[]> {

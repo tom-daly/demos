@@ -11,17 +11,17 @@ export default class GlobalNavNode extends React.Component<
 
   public render(): JSX.Element {
     return (
-      <li key={this.props.key} className={this.props.globalNavItem.subNavItems ? "me-dropdown" : ""}>
+      <li key={this.props.key} className={this.props.globalNavItem.subNavItems ? "td-dropdown" : ""}>
         <a href={this.props.globalNavItem.url || "#"} target={this.props.globalNavItem.openInNewWindow ? "_blank" : "_self"}>
           {this.props.globalNavItem.title}
           {
             this.props.globalNavItem.subNavItems && (
-              <i className="fa fa-caret-down"></i>
+              <i className="ms-Icon ms-Icon--CaretSolidDown"></i>
             )
           }
         </a>
         {this.props.globalNavItem.subNavItems && (
-          <ul className="me-dropdown-menu">
+          <ul className="td-dropdown-menu">
             {this.props.globalNavItem.subNavItems.map(
               (globalNavItem: IGlobalNavItem, index: number) => (
                 <GlobalNavNode key={index} globalNavItem={globalNavItem} />

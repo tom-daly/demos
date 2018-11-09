@@ -4,7 +4,7 @@ import GlobalNav from "./GlobalNav/GlobalNav";
 export default class GlobalNavPlaceholder extends React.Component<{}, {}> {
   public render(): JSX.Element {
     return (
-        <div>
+        <div className='top-navigation'>
           <GlobalNav/>
         </div>
     );
