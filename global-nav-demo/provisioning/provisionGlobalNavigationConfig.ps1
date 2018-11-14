@@ -1,12 +1,16 @@
-$configFile = "savedSiteUrl.json";
+$configFile = "config.json";
 
 if((Test-Path $configFile) -eq $false) {
     $siteUrl = Read-Host -Prompt "Enter the site url"
-    @{siteUrl=$siteUrl} | ConvertTo-Json | Out-File $configFile
+    $username = Read-Host -Prompt "Enter the username"
+    $securePassword = Read-Host -Prompt "Enter your tenant password" -AsSecureString | ConvertFrom-SecureString
+    @{username=$username;securePassword=$securePassword;siteUrl=$siteUrl} | ConvertTo-Json | Out-File $configFile
 }
 
 $configObject = Get-Content $configFile | ConvertFrom-Json
-Connect-PnPOnline -url $configObject.siteUrl
+$password = $configObject.securePassword | ConvertTo-SecureString
+$credentials = new-object -typename System.Management.Automation.PSCredential -argumentlist $configObject.username, $password
+Connect-PnPOnline -url $configObject.siteUrl -Credentials $credentials
 
 function ProvisionList() {
     Write-Host ""
@@ -19,7 +23,7 @@ function ProvisionList() {
 
 ## The look up field in the schema used to fail
 ## this method was used during that time but no longer seems needed
-function ConfigureLookupField() {
+function ConfigureLookupField () {
     Write-Host "Adding Lookup Field" -ForegroundColor Green
     $globalNavList = Get-PnPList -Identity "Lists/GlobalNavList"
     

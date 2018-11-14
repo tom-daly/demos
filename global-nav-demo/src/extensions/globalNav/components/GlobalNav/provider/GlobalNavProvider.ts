@@ -4,13 +4,12 @@ import pnp from "sp-pnp-js";
 
 export default class GlobalNavProvider {
   constructor() {
-/*     pnp.setup({
+    pnp.setup({
+      // this one is set to hit the root url
       sp: {
-        baseUrl: window.location.origin
-          ? window.location.origin + "/"
-          : window.location.protocol + "/" + window.location.host + "/"
+        baseUrl: "https://bandrdev.sharepoint.com/sites/GlobalNav"
       }
-    }); */
+    });
   }
 
   public getGlobalNavigation(): Promise<IGlobalNavItem[]> {

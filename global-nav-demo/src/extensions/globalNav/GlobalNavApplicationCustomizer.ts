@@ -5,39 +5,38 @@ import {
   PlaceholderContent,
   PlaceholderName
 } from "@microsoft/sp-application-base";
-import * as strings from "GlobalNavDemoApplicationCustomizerStrings";
 import * as React from "react";
 import * as ReactDom from "react-dom";
-import GlobalNav from "./GlobaNavPlaceholder";
-import pnp from "sp-pnp-js/lib/pnp";
+import * as strings from "GlobalNavApplicationCustomizerStrings";
+import GlobalNav from "./components/GlobalNav/GlobalNav";
+const LOG_SOURCE: string = "GlobalNavApplicationCustomizer";
 
-const LOG_SOURCE: string = "GlobalNavDemoApplicationCustomizer";
+require("./styles.scss");
 
-require("./globalNavDemo.scss");
-
-export interface IGlobalNavDemoApplicationCustomizerProperties {}
+/**
+ * If your command set uses the ClientSideComponentProperties JSON input,
+ * it will be deserialized into the BaseExtension.properties object.
+ * You can define an interface to describe it.
+ */
+export interface IGlobalNavApplicationCustomizerProperties {
+}
 
 /** A Custom Action which can be run during execution of a Client Side Application */
-export default class GlobalNavDemoApplicationCustomizer extends BaseApplicationCustomizer<
-  IGlobalNavDemoApplicationCustomizerProperties
+export default class GlobalNavApplicationCustomizer extends BaseApplicationCustomizer<
+  IGlobalNavApplicationCustomizerProperties
 > {
   private topPlaceholder: PlaceholderContent | undefined;
 
   @override
   public onInit(): Promise<void> {
-    return super.onInit().then(() => {
-      pnp.setup({
-        spfxContext: this.context,
-        defaultCachingStore: "session",
-        globalCacheDisable: false
-      });
+    Log.info(LOG_SOURCE, `Initialized ${strings.Title}`);
 
-      this.context.placeholderProvider.changedEvent.add(
-        this,
-        this.renderPlaceHolders
-      );
-      this.renderPlaceHolders();
-    });
+    this.context.placeholderProvider.changedEvent.add(
+      this,
+      this.renderPlaceHolders
+    );
+
+    return Promise.resolve();
   }
 
   private renderPlaceHolders(): void {
