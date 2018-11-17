@@ -1,0 +1,12 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "isCreatingSolution": true,
+    "environment": "spo",
+    "version": "1.6.0",
+    "libraryName": "sps-ahmedabad-demo",
+    "libraryId": "2f4e41b5-b759-4445-a8fd-fe372cd7f016",
+    "packageManager": "npm",
+    "componentType": "extension",
+    "extensionType": "ApplicationCustomizer"
+  }
+}
