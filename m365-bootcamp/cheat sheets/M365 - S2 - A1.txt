@@ -1,0 +1,65 @@
+.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.
+	Session 2 Activity 1
+.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.
+
+
+"`-._,-'"`-._,-'"`-._,-'"`-._,-'
+	HelloWorldWebPart.ts 
+"`-._,-'"`-._,-'"`-._,-'"`-._,-'
+
+
+## STEP 1 - ADD IMPORT
+import { SPHttpClient, SPHttpClientResponse } from "@microsoft/sp-http";
+
+## STEP 2 - REPLACE RENDER
+this.domElement.innerHTML = `
+      <div class="${styles.helloWorld}">
+        <div class="${styles.container}">
+          <div class="${styles.row}">
+            <div class="${styles.column}">
+              <span class="${styles.title}">My List Items</span>
+              <div id="myContainer" />
+            </div>
+          </div>
+        </div>
+      </div>
+      `;
+
+## STEP 3 - ADD GET & RENDER
+    this._getListItems().then(response => {
+      let items: string[] = [];
+      response.map(item => {
+        items.push(item.Title);
+      });
+      this._renderListItems(items);
+    });
+	
+## STEP 4 - ADD GET LIST ITEMS VIA REST
+  private _getListItems(): Promise<any> {
+    return this.context.spHttpClient
+      .get(
+        this.context.pageContext.web.absoluteUrl +
+        `/_api/web/lists/GetByTitle('Test')/items`,
+        SPHttpClient.configurations.v1
+      )
+      .then((response: any) => {
+        return response.json().then(jsonResponse => {
+          return jsonResponse.value;
+        });
+      });
+  }
+  
+## STEP 5 - ADD RENDER LIST ITEMS FUNCTION
+  private _renderListItems(items: string[]): void {
+    let html: string = "";
+
+    items.forEach((item: string) => {
+      html += `
+    <p class="${styles.row}">
+        <span class="${styles.subTitle}">${item}</span>
+    </p>`;
+    });
+
+    const listItemContainer: Element = this.domElement.querySelector("#myContainer");
+    listItemContainer.innerHTML = html;
+  }

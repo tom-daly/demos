@@ -1,0 +1,123 @@
+.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.
+	Session 3 Activity 2
+.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.
+
+## INSTALL OFFICE UI FABRIC
+npm install office-ui-fabric-react --save
+
+
+"`-._,-'"`-._,-'"`-._,-'"`-._,-'
+	HelloWorldWebPart.ts 
+"`-._,-'"`-._,-'"`-._,-'"`-._,-'
+
+
+
+## IMPORT PRIMARY BUTTON
+import { PrimaryButton } from "office-ui-fabric-react/lib/Button";
+
+## ADD BUTTON COMPONENT
+              <div>
+                <PrimaryButton text="Submit" />
+              </div>
+
+## ADD BUTTON ON CLICK FUNCTION
+  private _onClick = (): void => {
+    console.log("click");
+  }
+
+## ADD COMPONENT ON CLICK TO FUNCTION
+<PrimaryButton text="Submit" onClick={this._onClick} />
+
+
+## IMPORT TEXT FIELD
+import { TextField } from 'office-ui-fabric-react/lib/TextField';
+
+## ADD TEXT FIELD
+<TextField multiline rows={3} />
+<br/>
+
+
+"`-._,-'"`-._,-'"`-._,-'"`-._,-'
+	IHelloWorldState.ts 
+"`-._,-'"`-._,-'"`-._,-'"`-._,-'
+
+
+## ADD STATE VALUE FOR TEXT FIELD
+textFieldValue: string;
+
+
+"`-._,-'"`-._,-'"`-._,-'"`-._,-'
+	HelloWorldWebPart.ts 
+"`-._,-'"`-._,-'"`-._,-'"`-._,-'
+
+
+## INITIALIZE STATE VALUE FOR TEXT FIELD IN CONSTRUCTOR
+  constructor(props: IHelloWorldProps) {
+    super(props);
+
+    this.state = {
+      items: [],
+      textFieldValue: ""
+    };
+  }
+
+## ADD ON CHANGE EVENT FOR TEXT BOX
+<TextField multiline rows={3} value={this.state.textFieldValue} onChange={this._onChange}/><br/>
+
+## ADD ON CHANGE EVENT FUNCTION FOR TEXT BOX
+  private _onChange = (event: any, newText: string): void => {
+	console.log(newText);
+	this.setState({
+	 textFieldValue: newText
+	});	
+  }
+
+
+## ADD TEXT FIELD VALUE FROM STATE TO COMPONENT
+<TextField multiline rows={3} value={this.state.textFieldValue} onChange={this._onChange}/><br/>
+
+## ADD ADD NEW LIST ITEM PNP
+  private _addNewListItemPnP(text: string): Promise<any> {
+    let newItem: any = {
+      Title: text
+    };
+    return sp.web.lists.getByTitle("Test").items.add(newItem);
+  }
+
+## UPDATE PNP CALL TO ORDER BY AND RETURN 1 ITEM
+.orderBy("ID", false).top(1)
+
+
+## CLEAN UP CODE
+
+## REFACTOR COMPONENT WILL MOUNT & GET LIST ITEMS PNP
+  public componentWillMount(): void {
+    this._getListItemsPnP();
+  }
+
+  private _getListItemsPnP = (): Promise<any> => {
+    return sp.web.lists.getByTitle("Test").items.orderBy("ID", false).top(1).get().then((items: any[]) => {
+        this.setState({
+          items: items.map(r => r.Title)
+        });
+    });
+  }
+
+## UPDATE RENDER
+              <span className={ styles.title }>Feedback!</span>
+              {
+                this.state.items.map(item => {
+                  return (
+                    <p className={styles.row}>
+                      <b>Last Item: </b><span className={styles.subTitle}>
+                        {item}
+                      </span>
+                    </p>
+                  );
+                })
+              }
+
+## WIRE UP BUTTON
+  private _onClick = (): void => {
+    this._addNewListItemPnP(this.state.textFieldValue).then(this._getListItemsPnP);
+  }

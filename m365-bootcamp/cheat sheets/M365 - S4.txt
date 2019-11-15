@@ -1,0 +1,71 @@
+.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.
+	Session 4 Activity 1
+.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.
+
+
+"`-._,-'"`-._,-'"`-._,-'"`-._,-'
+	HelloWorldWebPart.ts 
+"`-._,-'"`-._,-'"`-._,-'"`-._,-'
+
+
+## IMPORT PNP-JS SETUP
+import * as microsoftTeams from "@microsoft/teams-js";
+
+## ADD TEAMS CONTEXT VARIABLE
+  private _teamsContext: microsoftTeams.Context;
+
+## UPDATE ON INIT
+  public onInit(): Promise<any> {
+    return super.onInit().then(_ => {
+      pnpSetup({
+        spfxContext: this.context
+      });
+
+      let retVal: Promise<any> = Promise.resolve();
+      if (this.context.microsoftTeams) {
+        retVal = new Promise((resolve, reject) => {
+          this.context.microsoftTeams.getContext(context => {
+            this._teamsContext = context;
+            resolve();
+          });
+        });
+      }
+      return retVal;
+    });
+  }
+
+## PASS TEAMS CONTEXT PROP
+  public render(): void {
+    const element: React.ReactElement<IHelloWorldProps > = React.createElement(
+      HelloWorld,
+      {
+        description: this.properties.description,
+        teamsContext: this._teamsContext ? true : false
+      }
+    );
+
+    ReactDom.render(element, this.domElement);
+  }
+
+
+"`-._,-'"`-._,-'"`-._,-'"`-._,-'
+	IHelloWorldProps.ts
+"`-._,-'"`-._,-'"`-._,-'"`-._,-'
+  
+## UPDATE INTERFACE DEFINITION FOR PROPS
+export interface IHelloWorldProps {
+  description: string;
+  teamsContext: boolean;
+}
+
+
+"`-._,-'"`-._,-'"`-._,-'"`-._,-'
+	HelloWorld.tsx 
+"`-._,-'"`-._,-'"`-._,-'"`-._,-'
+
+## UPDATE RENDER
+let contextTitle: string = this.props.teamsContext ? "This is Teams!" : "This is SharePoint";
+...
+...
+...
+<span className={ styles.title }>{contextTitle}</span>

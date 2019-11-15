@@ -1,0 +1,31 @@
+.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.
+	Session 2 Cheat Sheet 
+.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.
+
+
+## CHANGE DIRECTORY TO ROOT
+cd \
+
+## MAKE DIRECTORY
+md helloworld-webpart
+
+## CHANGE DIRECTORY
+cd helloworld-webpart
+
+## CALL YOEMAN WITH SHAREPOINT TEMPLATE
+yo @microsoft/sharepoint
+
+## DEBUG BUILD COMMANDS
+gulp clean
+gulp build
+gulp bundle
+gulp package-solution
+
+## PRODUCTION BUILD COMMANDS
+gulp clean
+gulp build --ship
+gulp bundle --ship
+gulp package-solution –-ship
+
+## DEBUG URL 
+?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js

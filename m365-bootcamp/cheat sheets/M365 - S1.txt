@@ -1,0 +1,23 @@
+.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.
+	Session 1 Cheat Sheet 
+.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.
+
+
+## INSTALL YEOMAN AND GULP
+npm install -g yo gulp
+
+## INSTALL YEOMAN SHAREPOINT GENERATOR
+npm install -g @microsoft/generator-sharepoint
+
+## TRUST GULP DEV CERT
+gulp trust-dev-cert
+
+
+
+
+
+	
+
+
+
+

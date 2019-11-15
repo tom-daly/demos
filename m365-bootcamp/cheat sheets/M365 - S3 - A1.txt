@@ -1,0 +1,85 @@
+.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.
+	Session 3 Activity 1
+.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.
+
+
+"`-._,-'"`-._,-'"`-._,-'"`-._,-'
+	HelloWorldWebPart.ts 
+"`-._,-'"`-._,-'"`-._,-'"`-._,-'
+
+
+## INSTALL PNP-JS
+npm install @pnp/logging @pnp/common @pnp/odata @pnp/sp @pnp/graph --save
+
+## IMPORT PNP-JS SETUP
+import { setup as pnpSetup } from "@pnp/common";
+
+## ADD ONINIT
+  public onInit(): Promise<void> {
+    return super.onInit().then(_ => {
+      pnpSetup({
+        spfxContext: this.context
+      });
+    });
+  }
+
+
+
+CREATE THIS FILE IN THE SAME FOLDER AS IHelloWorldProps.ts
+"`-._,-'"`-._,-'"`-._,-'"`-._,-'
+	IHellWorldState.ts
+"`-._,-'"`-._,-'"`-._,-'"`-._,-'
+  
+## ADD STATE DEFINITION 
+export default interface IHelloWorldState {
+  items: string[];
+}
+
+
+"`-._,-'"`-._,-'"`-._,-'"`-._,-'
+	HelloWorldWebPart.ts 
+"`-._,-'"`-._,-'"`-._,-'"`-._,-'
+
+## Import State, Add Constructor
+import IHelloWorldState from "./IHelloWorldState";
+...
+  constructor(props: IHelloWorldProps) {
+    super(props);
+
+    this.state = {
+      items: [],
+      textFieldValue: ""
+    };
+  }
+
+## IMPORT PNP-JS SHAREPOINT
+import { sp } from "@pnp/sp";
+
+## ADD GET LIST ITEMS VIA PNP-JS
+  private _getListItemsPnP(): Promise<any> {
+    return sp.web.lists.getByTitle("Test").items.get().then((items: any[]) => {
+        return items;
+    });
+  }
+  
+## ADD COMPONENT WILL MOUNT LIFE CYCLE HOOK
+  public componentWillMount(): void {
+    this._getListItemsPnP().then(response => {
+		this.setState({
+			items: response.map(r => r.Title);
+		});
+	});
+  }
+
+## UPDATE RENDER
+              {
+                this.state.items.map(item => {
+                  return (
+                    <p className={styles.row}>
+                       <span className={styles.subTitle}>
+                        {item}
+                      </span>
+                    </p>
+                  );
+                })
+              }
