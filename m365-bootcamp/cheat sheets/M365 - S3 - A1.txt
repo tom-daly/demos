@@ -37,7 +37,7 @@ export default interface IHelloWorldState {
 
 
 "`-._,-'"`-._,-'"`-._,-'"`-._,-'
-	HelloWorld.ts 
+	HelloWorld.tsx
 "`-._,-'"`-._,-'"`-._,-'"`-._,-'
 
 ## IMPORT STATE
