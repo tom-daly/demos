@@ -25,7 +25,7 @@ import { setup as pnpSetup } from "@pnp/common";
 
 
 
-CREATE THIS FILE src\webparts\helloWorld\components\IHelloWorldProps.ts  
+CREATE THIS FILE src\webparts\helloWorld\components\IHelloWorldState.ts  
 "`-._,-'"`-._,-'"`-._,-'"`-._,-'
 	IHellWorldState.ts
 "`-._,-'"`-._,-'"`-._,-'"`-._,-'
