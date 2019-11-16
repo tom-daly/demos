@@ -34,6 +34,23 @@ import * as microsoftTeams from "@microsoft/teams-js";
     });
   }
 
+
+"`-._,-'"`-._,-'"`-._,-'"`-._,-'
+	IHelloWorldProps.ts
+"`-._,-'"`-._,-'"`-._,-'"`-._,-'
+  
+## UPDATE INTERFACE DEFINITION FOR PROPS
+export interface IHelloWorldProps {
+  description: string;
+  teamsContext: boolean;
+}
+
+
+"`-._,-'"`-._,-'"`-._,-'"`-._,-'
+	HelloWorldWebPart.ts 
+"`-._,-'"`-._,-'"`-._,-'"`-._,-'
+
+
 ## PASS TEAMS CONTEXT PROP
   public render(): void {
     const element: React.ReactElement<IHelloWorldProps > = React.createElement(
@@ -47,16 +64,6 @@ import * as microsoftTeams from "@microsoft/teams-js";
     ReactDom.render(element, this.domElement);
   }
 
-
-"`-._,-'"`-._,-'"`-._,-'"`-._,-'
-	IHelloWorldProps.ts
-"`-._,-'"`-._,-'"`-._,-'"`-._,-'
-  
-## UPDATE INTERFACE DEFINITION FOR PROPS
-export interface IHelloWorldProps {
-  description: string;
-  teamsContext: boolean;
-}
 
 
 "`-._,-'"`-._,-'"`-._,-'"`-._,-'
