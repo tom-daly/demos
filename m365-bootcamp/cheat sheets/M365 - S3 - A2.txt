@@ -7,9 +7,8 @@ npm install office-ui-fabric-react --save
 
 
 "`-._,-'"`-._,-'"`-._,-'"`-._,-'
-	HelloWorldWebPart.ts 
+	HelloWorld.tsx
 "`-._,-'"`-._,-'"`-._,-'"`-._,-'
-
 
 
 ## IMPORT PRIMARY BUTTON
@@ -47,7 +46,7 @@ textFieldValue: string;
 
 
 "`-._,-'"`-._,-'"`-._,-'"`-._,-'
-	HelloWorldWebPart.ts 
+	HelloWorld.ts x
 "`-._,-'"`-._,-'"`-._,-'"`-._,-'
 
 

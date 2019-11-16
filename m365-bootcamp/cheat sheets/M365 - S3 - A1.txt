@@ -3,13 +3,13 @@
 .oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.
 
 
+## INSTALL PNP-JS
+npm install @pnp/logging @pnp/common @pnp/odata @pnp/sp @pnp/graph --save
+
+
 "`-._,-'"`-._,-'"`-._,-'"`-._,-'
 	HelloWorldWebPart.ts 
 "`-._,-'"`-._,-'"`-._,-'"`-._,-'
-
-
-## INSTALL PNP-JS
-npm install @pnp/logging @pnp/common @pnp/odata @pnp/sp @pnp/graph --save
 
 ## IMPORT PNP-JS SETUP
 import { setup as pnpSetup } from "@pnp/common";
@@ -25,7 +25,7 @@ import { setup as pnpSetup } from "@pnp/common";
 
 
 
-CREATE THIS FILE IN THE SAME FOLDER AS IHelloWorldProps.ts
+CREATE THIS FILE src\webparts\helloWorld\components\IHelloWorldProps.ts  
 "`-._,-'"`-._,-'"`-._,-'"`-._,-'
 	IHellWorldState.ts
 "`-._,-'"`-._,-'"`-._,-'"`-._,-'
@@ -37,18 +37,21 @@ export default interface IHelloWorldState {
 
 
 "`-._,-'"`-._,-'"`-._,-'"`-._,-'
-	HelloWorldWebPart.ts 
+	HelloWorld.ts 
 "`-._,-'"`-._,-'"`-._,-'"`-._,-'
 
-## Import State, Add Constructor
+## IMPORT STATE
 import IHelloWorldState from "./IHelloWorldState";
-...
+
+## ADD STATE TO CLASS DEFINITION
+export default class HelloWorld extends React.Component<IHelloWorldProps, IHelloWorldState> {
+
+## ADD CONSTRUCTOR UNDER CLASS DEFINITION
   constructor(props: IHelloWorldProps) {
     super(props);
 
     this.state = {
-      items: [],
-      textFieldValue: ""
+      items: []
     };
   }
 
@@ -66,7 +69,7 @@ import { sp } from "@pnp/sp";
   public componentWillMount(): void {
     this._getListItemsPnP().then(response => {
 		this.setState({
-			items: response.map(r => r.Title);
+			items: response.map(r => r.Title)
 		});
 	});
   }
