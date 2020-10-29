@@ -1,0 +1,189 @@
+<?xml version="1.0"?>
+<pnp:Provisioning
+    xmlns:pnp="http://schemas.dev.office.com/PnP/2019/09/ProvisioningSchema">
+    <pnp:Preferences Generator="OfficeDevPnP.Core, Version=3.15.1911.0, Culture=neutral, PublicKeyToken=5e633289e95c321a" />
+    <pnp:Templates>
+        <pnp:ProvisioningTemplate ID="MyTemplate" Version="1">
+            <pnp:SiteFields>
+              <!-- By Whom-->
+              <Field Type="TaxonomyFieldType" DisplayName="By Whom" Name="ByWhom" StaticName="ByWhom" ShowField="Term1033" Required="FALSE" EnforceUniqueValues="FALSE" Group="GA Site Columns" ID="{04458BBC-3A56-493C-8B95-6A9EB847754C}">
+                <Customization>
+                  <ArrayOfProperty>
+                    <Property>
+                      <Name>SspId</Name>
+                      <Value xmlns:q1="http://www.w3.org/2001/XMLSchema" p4:type="q1:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{sitecollectiontermstoreid}</Value>
+                    </Property>
+                    <Property>
+                      <Name>TermSetId</Name>
+                      <Value xmlns:q2="http://www.w3.org/2001/XMLSchema" p4:type="q2:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{termsetid:GA Site MetaData:By Whom}</Value>
+                    </Property>
+                    <Property>
+                      <Name>IsPathRendered</Name>
+                      <Value xmlns:q7="http://www.w3.org/2001/XMLSchema" p4:type="q7:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+                    </Property>
+                    <Property>
+                      <Name>IsKeyword</Name>
+                      <Value xmlns:q8="http://www.w3.org/2001/XMLSchema" p4:type="q8:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+                    </Property>
+                  </ArrayOfProperty>
+                </Customization>
+              </Field>
+              <!-- Agencies -->
+              <Field Type="TaxonomyFieldType" DisplayName="Agencies" Name="Agencies" StaticName="Agencies" ShowField="Term1033" Required="FALSE" EnforceUniqueValues="FALSE" Group="GA Site Columns" ID="{B3DE0BF6-DDE0-4FC7-8F74-8245685E17A2}">
+                <Customization>
+                  <ArrayOfProperty>
+                    <Property>
+                      <Name>SspId</Name>
+                      <Value xmlns:q1="http://www.w3.org/2001/XMLSchema" p4:type="q1:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{sitecollectiontermstoreid}</Value>
+                    </Property>
+                    <Property>
+                      <Name>TermSetId</Name>
+                      <Value xmlns:q2="http://www.w3.org/2001/XMLSchema" p4:type="q2:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{termsetid:GA Site MetaData:Agencies}</Value>
+                    </Property>
+                    <Property>
+                      <Name>IsPathRendered</Name>
+                      <Value xmlns:q7="http://www.w3.org/2001/XMLSchema" p4:type="q7:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+                    </Property>
+                    <Property>
+                      <Name>IsKeyword</Name>
+                      <Value xmlns:q8="http://www.w3.org/2001/XMLSchema" p4:type="q8:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+                    </Property>
+                  </ArrayOfProperty>
+                </Customization>
+              </Field>
+              <!-- Document Status -->
+              <Field Type="TaxonomyFieldType" DisplayName="Document Status" Name="DocumentStatus" StaticName="DocumentStatus" ShowField="Term1033" Required="FALSE" EnforceUniqueValues="FALSE" Group="GA Site Columns" ID="{370C0A63-6FE5-4F97-9BBD-5068B9BC300F}">
+                <Customization>
+                  <ArrayOfProperty>
+                    <Property>
+                      <Name>SspId</Name>
+                      <Value xmlns:q1="http://www.w3.org/2001/XMLSchema" p4:type="q1:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{sitecollectiontermstoreid}</Value>
+                    </Property>
+                    <Property>
+                      <Name>TermSetId</Name>
+                      <Value xmlns:q2="http://www.w3.org/2001/XMLSchema" p4:type="q2:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{termsetid:GA Site MetaData:Document Status}</Value>
+                    </Property>
+                    <Property>
+                      <Name>IsPathRendered</Name>
+                      <Value xmlns:q7="http://www.w3.org/2001/XMLSchema" p4:type="q7:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+                    </Property>
+                    <Property>
+                      <Name>IsKeyword</Name>
+                      <Value xmlns:q8="http://www.w3.org/2001/XMLSchema" p4:type="q8:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+                    </Property>
+                  </ArrayOfProperty>
+                </Customization>
+              </Field>
+              <!-- Phase -->
+              <Field Type="TaxonomyFieldType" DisplayName="Phase" Name="Phase" StaticName="Phase" ShowField="Term1033" Required="FALSE" EnforceUniqueValues="FALSE" Group="GA Site Columns" ID="{B757C3EB-A664-4F38-A5D2-A0245773092F}">
+                <Customization>
+                  <ArrayOfProperty>
+                    <Property>
+                      <Name>SspId</Name>
+                      <Value xmlns:q1="http://www.w3.org/2001/XMLSchema" p4:type="q1:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{sitecollectiontermstoreid}</Value>
+                    </Property>
+                    <Property>
+                      <Name>TermSetId</Name>
+                      <Value xmlns:q2="http://www.w3.org/2001/XMLSchema" p4:type="q2:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{termsetid:GA Site MetaData:GA Phase}</Value>
+                    </Property>
+                    <Property>
+                      <Name>IsPathRendered</Name>
+                      <Value xmlns:q7="http://www.w3.org/2001/XMLSchema" p4:type="q7:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+                    </Property>
+                    <Property>
+                      <Name>IsKeyword</Name>
+                      <Value xmlns:q8="http://www.w3.org/2001/XMLSchema" p4:type="q8:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+                    </Property>
+                  </ArrayOfProperty>
+                </Customization>
+              </Field>
+              <!-- Sub Category -->
+              <Field Type="TaxonomyFieldType" DisplayName="Sub Category" Name="SubCategory" StaticName="SubCategory" ShowField="Term1033" Required="FALSE" EnforceUniqueValues="FALSE" Group="GA Site Columns" ID="{343407BB-5E33-4E0E-89C2-71B3BC6FA1D0}">
+                <Customization>
+                  <ArrayOfProperty>
+                    <Property>
+                      <Name>SspId</Name>
+                      <Value xmlns:q1="http://www.w3.org/2001/XMLSchema" p4:type="q1:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{sitecollectiontermstoreid}</Value>
+                    </Property>
+                    <Property>
+                      <Name>TermSetId</Name>
+                      <Value xmlns:q2="http://www.w3.org/2001/XMLSchema" p4:type="q2:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{termsetid:GA Site MetaData:GA-Sub-Folder-Name}</Value>
+                    </Property>
+                    <Property>
+                      <Name>IsPathRendered</Name>
+                      <Value xmlns:q7="http://www.w3.org/2001/XMLSchema" p4:type="q7:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+                    </Property>
+                    <Property>
+                      <Name>IsKeyword</Name>
+                      <Value xmlns:q8="http://www.w3.org/2001/XMLSchema" p4:type="q8:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+                    </Property>
+                  </ArrayOfProperty>
+                </Customization>
+              </Field>
+              <!-- Submittal Action -->
+              <Field Type="TaxonomyFieldType" DisplayName="Submittal Action" Name="SubmittalAction" StaticName="SubmittalAction" ShowField="Term1033" Required="FALSE" EnforceUniqueValues="FALSE" Group="GA Site Columns" ID="{61BF2A8E-8415-4A90-85B3-B323CF2CFDE7}">
+                <Customization>
+                  <ArrayOfProperty>
+                    <Property>
+                      <Name>SspId</Name>
+                      <Value xmlns:q1="http://www.w3.org/2001/XMLSchema" p4:type="q1:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{sitecollectiontermstoreid}</Value>
+                    </Property>
+                    <Property>
+                      <Name>TermSetId</Name>
+                      <Value xmlns:q2="http://www.w3.org/2001/XMLSchema" p4:type="q2:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{termsetid:GA Site MetaData:Submittal Action}</Value>
+                    </Property>
+                    <Property>
+                      <Name>IsPathRendered</Name>
+                      <Value xmlns:q7="http://www.w3.org/2001/XMLSchema" p4:type="q7:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+                    </Property>
+                    <Property>
+                      <Name>IsKeyword</Name>
+                      <Value xmlns:q8="http://www.w3.org/2001/XMLSchema" p4:type="q8:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+                    </Property>
+                  </ArrayOfProperty>
+                </Customization>
+              </Field>
+              <!-- Trades -->
+              <Field Type="TaxonomyFieldType" DisplayName="Trades" Name="Trades" StaticName="Trades" ShowField="Term1033" Required="FALSE" EnforceUniqueValues="FALSE" Mult="TRUE" Overwrite="TRUE" Group="GA Site Columns" ID="{05ED2163-9240-401B-BA6A-69EEC716D838}">
+                <Customization>
+                  <ArrayOfProperty>
+                    <Property>
+                      <Name>SspId</Name>
+                      <Value xmlns:q1="http://www.w3.org/2001/XMLSchema" p4:type="q1:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{sitecollectiontermstoreid}</Value>
+                    </Property>
+                    <Property>
+                      <Name>TermSetId</Name>
+                      <Value xmlns:q2="http://www.w3.org/2001/XMLSchema" p4:type="q2:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{termsetid:GA Site MetaData:Trades}</Value>
+                    </Property>
+                    <Property>
+                      <Name>IsPathRendered</Name>
+                      <Value xmlns:q7="http://www.w3.org/2001/XMLSchema" p4:type="q7:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+                    </Property>
+                    <Property>
+                      <Name>IsKeyword</Name>
+                      <Value xmlns:q8="http://www.w3.org/2001/XMLSchema" p4:type="q8:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+                    </Property>
+                  </ArrayOfProperty>
+                </Customization>
+              </Field>
+              <!-- Action Date -->
+	            <Field ID="{E0078F59-7355-49C7-8A1E-EAAFAFCA1F5A}" Name="ActionDate" StaticName="ActionDate" DisplayName="Action Date" Type="DateTime"
+                    Group="GA Site Columns" Sealed="FALSE" Required="FALSE" Hidden="FALSE" Format="DateOnly" />
+            </pnp:SiteFields>
+            <pnp:ContentTypes>
+                <pnp:ContentType ID="0x0101005E444345CF0B4115A3D9F4E25533A5F6" Name="GA Document" Group="GA Content Types" Description="" Version="0">
+                    <pnp:FieldRefs>
+                        <pnp:FieldRef ID="{04458BBC-3A56-493C-8B95-6A9EB847754C}" Name="ByWhom"/>
+                        <pnp:FieldRef ID="{B3DE0BF6-DDE0-4FC7-8F74-8245685E17A2}" Name="Agencies"/>
+                        <pnp:FieldRef ID="{370C0A63-6FE5-4F97-9BBD-5068B9BC300F}" Name="DocumentStatus"/>
+                        <pnp:FieldRef ID="{B757C3EB-A664-4F38-A5D2-A0245773092F}" Name="Phase"/>
+                        <pnp:FieldRef ID="{343407BB-5E33-4E0E-89C2-71B3BC6FA1D0}" Name="SubCategory"/>
+                        <pnp:FieldRef ID="{61BF2A8E-8415-4A90-85B3-B323CF2CFDE7}" Name="SubmittalAction"/>
+                        <pnp:FieldRef ID="{05ED2163-9240-401B-BA6A-69EEC716D838}" Name="Trades"/>
+                        <pnp:FieldRef ID="{E0078F59-7355-49C7-8A1E-EAAFAFCA1F5A}" Name="ActionDate"/>
+                    </pnp:FieldRefs>
+                </pnp:ContentType>
+            </pnp:ContentTypes>
+        </pnp:ProvisioningTemplate>
+    </pnp:Templates>
+</pnp:Provisioning>
