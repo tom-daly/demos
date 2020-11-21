@@ -25,6 +25,9 @@ import { setup as pnpSetup } from "@pnp/common";
   
 ## IMPORT PNP-JS SHAREPOINT
 import { sp } from "@pnp/sp";
+import "@pnp/sp/webs";
+import "@pnp/sp/lists/web";
+import "@pnp/sp/items/list";
 
 ## ADD GET LIST ITEMS VIA PNP-JS
   private _getListItemsPnP(): Promise<any> {
