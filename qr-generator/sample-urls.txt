@@ -1,0 +1,5 @@
+https://github.com/tom-daly/demos
+https://microsoft.com
+https://developer.microsoft.com/en-us/sharepoint
+https://docs.microsoft.com/en-us/sharepoint/dev/spfx/sharepoint-framework-overview
+https://pnp.github.io/pnpjs/

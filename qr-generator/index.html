@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QR Code Generator</title>
+  <script src="vendor/vendor.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🔲 QR Code Generator</h1>
+      <p class="subtitle">Upload a list of URLs to generate QR codes in bulk</p>
+    </header>
+
+    <section class="input-section card">
+      <h2>Add URLs</h2>
+
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="upload">📁 Upload File</button>
+        <button class="tab-btn" data-tab="paste">✏️ Paste URLs</button>
+      </div>
+
+      <!-- Upload Tab -->
+      <div id="tab-upload" class="tab-content active">
+        <div class="drop-zone" id="dropZone">
+          <div class="drop-zone-icon">📂</div>
+          <p>Drag &amp; drop a <strong>.csv</strong> or <strong>.txt</strong> file here</p>
+          <p class="hint">One URL per line (or comma-separated)</p>
+          <label class="btn btn-primary" for="fileInput">Choose File</label>
+          <input type="file" id="fileInput" accept=".csv,.txt" hidden />
+        </div>
+        <div id="fileInfo" class="file-info hidden"></div>
+      </div>
+
+      <!-- Paste Tab -->
+      <div id="tab-paste" class="tab-content">
+        <label for="urlTextarea">Enter one URL per line:</label>
+        <textarea
+          id="urlTextarea"
+          rows="8"
+          placeholder="https://example.com&#10;https://microsoft.com&#10;https://github.com"
+        ></textarea>
+      </div>
+
+      <div class="actions">
+        <button id="generateBtn" class="btn btn-primary btn-large">Generate QR Codes</button>
+        <button id="clearBtn" class="btn btn-secondary">Clear All</button>
+      </div>
+    </section>
+
+    <!-- Status bar -->
+    <div id="statusBar" class="status-bar hidden"></div>
+
+    <!-- Results -->
+    <section id="resultsSection" class="results-section hidden">
+      <div class="results-header">
+        <h2>Generated QR Codes <span id="countBadge" class="badge">0</span></h2>
+        <div class="results-actions">
+          <button id="downloadAllBtn" class="btn btn-success">⬇ Download All (ZIP)</button>
+          <button id="clearResultsBtn" class="btn btn-secondary">🗑 Clear Results</button>
+        </div>
+      </div>
+
+      <div id="qrGrid" class="qr-grid"></div>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
