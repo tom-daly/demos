@@ -4,11 +4,11 @@ Companion code for the blog post
 **[Letting an Azure Function Send Email as One Mailbox — and Only One](https://thomasdaly.net/)**.
 
 The problem these scripts solve: the `Mail.Send` application permission in
-Microsoft Graph is **tenant-wide**. Grant it to your app and, until you fence it,
+Microsoft Graph is **tenant-wide**. Grant it to your app and, until you scope it,
 that app can send mail as anybody in the organisation — the CEO included. There
 is no "just this one mailbox" option in the consent dialog.
 
-Two ways to fence it. Both end with the app able to send as exactly one mailbox.
+Two ways to scope it. Both end with the app able to send as exactly one mailbox.
 
 | File | Approach | Use it when |
 |---|---|---|
@@ -60,7 +60,7 @@ Management (for the policy).
 
 The ordering in that script is the important part: the policy is created
 **first** and the permission granted **last**, so the tenant-wide grant never
-exists without its fence. Do it the other way round and there is a window —
+exists without its restriction. Do it the other way round and there is a window —
 minutes, if something goes wrong, longer — where your app can send as anyone.
 
 ## Don't do both

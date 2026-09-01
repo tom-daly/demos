@@ -1,5 +1,5 @@
 <#
-    The OLDER way to fence an app to one mailbox: grant Mail.Send in Microsoft
+    The OLDER way to scope an app to one mailbox: grant Mail.Send in Microsoft
     Entra ID, then restrict it with an Exchange application access policy.
 
     Microsoft now labels application access policies as legacy and points to
@@ -8,10 +8,10 @@
     ordering below is the part people get wrong.
 
     ORDERING IS DELIBERATE. Mail.Send as an application permission is
-    TENANT-WIDE - while it is granted and unfenced, the identity can send as any
+    TENANT-WIDE - while it is granted and unscoped, the identity can send as any
     mailbox in the tenant. So this script creates the policy FIRST and grants
     the permission LAST, and the Exchange preflight fails before any grant is
-    made. There is no window where the grant exists without its fence.
+    made. There is no window where the grant exists without its restriction.
 
         Install-Module Microsoft.Graph, ExchangeOnlineManagement -Scope CurrentUser
 
@@ -70,7 +70,7 @@ function Add-GraphAppRole {
     Write-Host "Granted $RoleName"
 }
 
-# ---- 1. The fence, created BEFORE the grant ---------------------------------
+# ---- 1. The restriction, created BEFORE the grant ---------------------------
 Connect-ExchangeOnline
 
 # Interactive Connect-ExchangeOnline cannot be pre-pinned to a tenant the way
@@ -85,7 +85,7 @@ if ($exoTenant -and $exoTenant -ne $TenantId) {
 # Exchange Organization Management. If they are missing, the signed-in account is
 # not an Exchange administrator - stop with a clear message rather than a
 # "term is not recognized" further down. This preflight runs BEFORE any grant, so
-# a non-Exchange-admin run cannot leave the identity holding unfenced mail access.
+# a non-Exchange-admin run cannot leave the identity holding unscoped mail access.
 if (-not (Get-Command New-ApplicationAccessPolicy -ErrorAction SilentlyContinue)) {
     throw "New-ApplicationAccessPolicy is unavailable - run as an Exchange Administrator (Organization Management)."
 }
@@ -123,18 +123,18 @@ if ($existingPolicy) {
     Write-Host "Created application access policy"
 }
 
-# ---- 2. The grant, now that the fence is in place ---------------------------
+# ---- 2. The grant, now that the policy is in place --------------------------
 # Send-only. Mail.Read is deliberately absent: this identity never reads mail.
 Add-GraphAppRole "Mail.Send"
 
-# ---- 3. Verify the fence ----------------------------------------------------
+# ---- 3. Verify the scope ----------------------------------------------------
 # The service mailbox is IN the scope group, so its Granted result is immediate.
-# Assert it and fail loud if the fence did not take.
-$fence = Test-ApplicationAccessPolicy -AppId $miSp.AppId -Identity $ServiceMailbox
-if ($fence.AccessCheckResult -ne "Granted") {
-    throw "Fence verification failed: expected 'Granted' for $ServiceMailbox but got '$($fence.AccessCheckResult)'. Is the mailbox a member of '$ScopeGroup'?"
+# Assert it and fail loud if the policy did not take.
+$scoped = Test-ApplicationAccessPolicy -AppId $miSp.AppId -Identity $ServiceMailbox
+if ($scoped.AccessCheckResult -ne "Granted") {
+    throw "Scope verification failed: expected 'Granted' for $ServiceMailbox but got '$($scoped.AccessCheckResult)'. Is the mailbox a member of '$ScopeGroup'?"
 }
-Write-Host "Fence verified: Mail.Send is Granted for $ServiceMailbox"
+Write-Host "Scope verified: Mail.Send is Granted for $ServiceMailbox"
 
 # The policy's DENY side can take up to ~30 minutes to propagate across Exchange
 # Online, so testing an out-of-scope mailbox may briefly still return Granted.
