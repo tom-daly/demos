@@ -3,17 +3,18 @@
 Companion code for the blog post
 **[Letting an Azure Function Send Email as One Mailbox — and Only One](https://thomasdaly.net/)**.
 
-The problem these scripts solve: the `Mail.Send` application permission in
-Microsoft Graph is **tenant-wide**. Grant it to your app and, until you scope it,
-that app can send mail as anybody in the organisation — the CEO included. There
-is no "just this one mailbox" option in the consent dialog.
+The problem these scripts solve: a `Mail.Send` application permission granted in
+Microsoft Entra ID authorizes the app to send mail as **any user in the tenant** —
+the CEO included. There is no "just this one mailbox" option on the Entra consent
+screen; mailbox scoping is handled in Exchange Online.
 
-Two ways to scope it. Both end with the app able to send as exactly one mailbox.
+Two ways to configure it. Both end with the app able to send as exactly one
+mailbox. Note that they are **additive** — see "Don't do both" below.
 
 | File | Approach | Use it when |
 |---|---|---|
 | `grant-mail-send-rbac.ps1` | **RBAC for Applications** in Exchange Online. Nothing is granted in Entra ID at all — the permission is created inside Exchange already carrying its scope. | New setups. This is Microsoft's current guidance. |
-| `grant-mail-send-legacy-policy.ps1` | Tenant-wide `Mail.Send` in Entra ID, restricted afterwards by an **application access policy**. | You already have policies in place, or you are supporting a tenant that does. Microsoft now labels this approach legacy. |
+| `grant-mail-send-legacy-policy.ps1` | Tenant-wide `Mail.Send` granted in Entra ID, restricted afterwards by an Exchange **application access policy**. | You already have policies in place, or you are supporting a tenant that does. Microsoft now labels this approach legacy. |
 | `send-mail.ts` | The calling code. Managed identity, no secrets, one `sendMail` call. | Either approach — the app code is identical. |
 
 ## Before you run either script
@@ -65,9 +66,11 @@ minutes, if something goes wrong, longer — where your app can send as anyone.
 
 ## Don't do both
 
-If an app has RBAC for Applications *and* an unscoped `Mail.Send` grant in Entra,
-the two are a union and the unscoped grant wins. If you migrate from the legacy
-approach to RBAC, remove the Entra app-role assignment afterwards.
+Exchange RBAC does not override or narrow an existing Entra grant — the two are
+additive. If tenant-wide `Mail.Send` is still assigned in Entra, the app can send
+outside the Exchange RBAC scope no matter how tightly that scope is drawn. When
+migrating from the legacy approach to RBAC, remove the Entra app-role assignment
+afterwards.
 
 ## Gotchas worth knowing
 
