@@ -1,0 +1,27 @@
+{
+  "version": "2.0",
+  "logging": {
+    "applicationInsights": {
+      "samplingSettings": { "isEnabled": true, "excludedTypes": "Request;Exception" }
+    },
+    "logLevel": {
+      "default": "Warning",
+      "Function": "Information",
+      "Host.Results": "Information",
+      "Host.Triggers.Timer": "Information"
+    }
+  },
+  "extensions": {
+    "queues": {
+      "maxDequeueCount": 5,
+      "visibilityTimeout": "00:02:00",
+      "batchSize": 8,
+      "newBatchThreshold": 4
+    }
+  },
+  "functionTimeout": "00:10:00",
+  "extensionBundle": {
+    "id": "Microsoft.Azure.Functions.ExtensionBundle",
+    "version": "[4.*, 5.0.0)"
+  }
+}

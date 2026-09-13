@@ -1,0 +1,12 @@
+# real environment files hold tenant ids and a webhook secret
+infra/env/*.json
+!infra/env/example.json
+infra/logs/
+
+# functions
+local.settings.json
+__pycache__/
+.venv/
+node_modules/
+bin/
+obj/
