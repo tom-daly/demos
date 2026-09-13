@@ -1,0 +1,27 @@
+{
+  "_comment": "Copy to env/<name>.json and fill in. Scripts read inputs from here and write everything they learn back into 'outputs', 'graph' and 'history'. Keep real env files out of git; commit only this example.",
+  "environmentName": "aico",
+  "subscriptionId": "",
+  "tenantId": "",
+  "resourceGroup": "",
+  "location": "eastus2",
+  "parameters": {
+    "sharePointSiteUrl": "https://contoso.sharepoint.com/sites/Documents",
+    "sharePointLibrary": "Documents",
+    "sharePointFolder": "Incoming",
+    "sharePointResultsList": "Document Results",
+    "sharePointLogList": "Pipeline Log",
+    "modelName": "gpt-5-mini",
+    "modelVersion": "2025-08-07",
+    "modelCapacity": 50,
+    "functionRuntime": "python",
+    "functionRuntimeVersion": "3.12",
+    "developerPrincipalId": ""
+  },
+  "secrets": {
+    "webhookClientState": ""
+  },
+  "outputs": {},
+  "graph": {},
+  "history": []
+}

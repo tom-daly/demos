@@ -1,0 +1,54 @@
+PROMPT_VERSION: resume-2026-09-10.1
+
+Read this résumé. Give the facts, then an assessment. Answer in exactly this shape; every key is required, no others are allowed:
+
+{
+  "name": string or null,                  as written at the top of the résumé
+  "email": string or null,                 copied exactly
+  "phone": string or null,                 as written
+  "location": string or null,              "City, State" or "City, Country"; where they live, not an employer
+  "current_title": string or null,         the most recent role
+  "most_recent_employer": string or null,  the company for that role
+  "years_experience": string or null,      whole years as digits, e.g. "8"; null if the résumé gives no dates
+  "education": string or null,             "Degree, Institution", the highest listed
+  "top_skills": [string, ...],             0 to 8 items, in the résumé's own words, most prominent first; [] if none named
+  "assessment": {
+    "overall_score": integer 0-100,        your overall view, not an average
+    "scores": {
+      "experience":         { "score": integer 0-100, "reason": one sentence pointing at the document },
+      "skills":             { "score": integer 0-100, "reason": one sentence },
+      "education":          { "score": integer 0-100, "reason": one sentence },
+      "career_progression": { "score": integer 0-100, "reason": one sentence },
+      "presentation":       { "score": integer 0-100, "reason": one sentence }
+    },
+    "strengths":  [string, ...],           up to five; [] if none
+    "gaps":       [string, ...],           up to five; what is missing and expected
+    "weaknesses": [string, ...],           up to five; what is present and counts against
+    "summary": string                      three sentences: who this is, strongest at, main concern
+  },
+  "confidence": number 0 to 1,             how sure you are of the FACTS, not the assessment
+  "notes": string,                         arithmetic for years, oddities, anything a recruiter should know first; "" if nothing
+  "prompt_version": string                 the PROMPT_VERSION value at the top of this prompt, copied exactly
+}
+
+Acceptable values:
+- null means "not on the page". Never use "" or "unknown" for a missing fact; never invent one.
+- Scores: 50 is ordinary, 80 and above is strong, 20 and below has serious problems. Whole numbers only.
+- Every string under 400 characters. Lists never longer than stated.
+
+FACTS, copied from the page, null if not there:
+- name, email, phone, location (where they live, not an employer)
+- current_title and most_recent_employer: the most recent role
+- years_experience: whole years counted from the dates given; null if there are no dates. Show the arithmetic in notes.
+- education: highest degree and institution
+- top_skills: up to eight, in the résumé's own words, most prominent first. Only skills it names.
+
+ASSESSMENT, your judgement, 0 to 100 where 50 is ordinary, 80+ is strong, 20 and below has serious problems. If a target role is given, judge against it; otherwise judge the résumé for the career it describes.
+- Score five areas, each with a one-sentence reason pointing at something in the document: experience, skills, education, career_progression, presentation.
+- overall_score: your overall view, not an average.
+- strengths, gaps, weaknesses: up to five each. Gaps are what is missing and expected (unexplained periods, no dates, no measurable results). Weaknesses are what is present and counts against (job-hopping, duty lists instead of achievements, inconsistencies).
+- summary: three sentences a recruiter could read instead of the résumé: who this is, strongest at, main concern.
+
+Every point must trace to the document or to something clearly absent from it. Be direct.
+
+PROMPT VERSION. Copy the PROMPT_VERSION value from the first line of this prompt into prompt_version, character for character. It tells the pipeline which prompt produced the answer.

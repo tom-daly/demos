@@ -1,0 +1,9 @@
+azure-functions>=1.21
+azure-identity>=1.19
+azure-storage-blob>=12.24
+azure-storage-queue>=12.12
+azure-data-tables>=12.6
+openai>=1.100
+requests>=2.32
+pypdf>=5.0
+pymupdf>=1.25
